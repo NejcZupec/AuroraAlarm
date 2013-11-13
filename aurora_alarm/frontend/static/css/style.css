@@ -97,7 +97,7 @@ a:hover,a:focus {
 
 /* Header */
 #header .main-header {
-    min-height: 86px;
+    min-height: 40px;
     z-index: 9999;
     width: 100%;
     position: relative;
@@ -293,7 +293,7 @@ h2.title {
 .fullwidthbanner-container {
     width: 100% !important;
     position: relative;
-    max-height: 470px !important;
+    max-height: 300px !important;
     overflow: hidden;
     background-image: url(../img/loader.gif);
     background-repeat: no-repeat;

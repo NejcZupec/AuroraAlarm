@@ -37,7 +37,7 @@ website:   	http://www.themepunch.com
 
 .tp-caption { z-index:1; color:#fff;}
 .tp-caption h2{font-size:55px; line-height:55px; text-transform:uppercase; font-weight:700; color:#fff; margin:0; padding:0;}
-.tp-caption h3{font-size:40px; text-transform:uppercase; font-weight:600; color:#fff; margin:0; padding:0; text-rendering: none;}
+.tp-caption h3{font-size:40px; font-weight:600; color:#fff; margin:0; padding:0; text-rendering: none;}
 .tp-caption h4{font-size:30px; margin:0; padding:0; color:#fff; font-weight:300; text-transform:capitalize}
 .tp-caption.bg-black{padding:5px 10px; background:#555;}
 .tp-caption h5 {margin:0;padding:0;font-size:20px; color: #fff;}
