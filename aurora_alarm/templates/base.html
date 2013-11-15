@@ -14,31 +14,31 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
         <!-- Library CSS -->
-        <link rel="stylesheet" href="static/css/bootstrap.css">
-        <link rel="stylesheet" href="static/css/fonts/font-awesome/css/font-awesome.css">
-        <link rel="stylesheet" href="static/css/animations.css" media="screen">
-        <link rel="stylesheet" href="static/css/superfish.css" media="screen">
-        <link rel="stylesheet" href="static/css/revolution-slider/css/settings.css" media="screen">
-        <link rel="stylesheet" href="static/css/prettyPhoto.css" media="screen">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/fonts/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/animations.css" media="screen">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/superfish.css" media="screen">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/revolution-slider/css/settings.css" media="screen">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/prettyPhoto.css" media="screen">
         <!-- Theme CSS -->
-        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
         <!-- Skin -->
-        <link rel="stylesheet" href="static/css/colors/blue.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/colors/blue.css">
         <!-- Responsive CSS -->
-        <link rel="stylesheet" href="static/css/theme-responsive.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/theme-responsive.css">
         <!-- Favicons -->
-        <link rel="shortcut icon" href="static/img/ico/favicon.ico">
-        <link rel="apple-touch-icon" href="static/img/ico/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="static/img/ico/apple-touch-icon-72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="static/img/ico/apple-touch-icon-114.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="static/img/ico/apple-touch-icon-144.png">
+        <link rel="shortcut icon" href="{{ STATIC_URL }}img/ico/favicon.ico">
+        <link rel="apple-touch-icon" href="{{ STATIC_URL }}img/ico/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}img/ico/apple-touch-icon-72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}img/ico/apple-touch-icon-114.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ STATIC_URL }}img/ico/apple-touch-icon-144.png">
         <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script src="static/js/respond.min.js"></script>
+        <script src="{{ STATIC_URL }}js/respond.min.js"></script>
         <![endif]-->
         <!--[if IE]>
-        <link rel="stylesheet" href="static/css/ie.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/ie.css">
         <![endif]-->
     </head>
 
@@ -46,6 +46,28 @@
         <div class="wrap">
             <!-- Header Start -->
             {% include 'header.html' %}
+
+            <!-- Title, Breadcrumb Start-->
+            {% block breadcrumb %}
+                <div class="breadcrumb-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                                <h2 class="title">{% block title %}{% endblock %}</h2>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                                <div class="breadcrumbs pull-right">
+                                    <ul>
+                                        <li>You are here:</li>
+                                        <li><a href="{% url 'home' %}">Home</a></li>
+                                        <li>{% block breadcrumb_title %}{% endblock %}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
 
             <!-- Content Block -->
             {% block content %}{% endblock %}

@@ -22,19 +22,20 @@
             <nav class="collapse navbar-collapse menu">
                 <ul class="nav navbar-nav sf-menu">
                     <li>
-                        <a id="current" href="index.html">Home</a>
+                        <!-- TODO: Use current_tag instead of hardcoded current id. -->
+                        <a id="current" href="{% url 'home' %}">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="sf-with-ul">Alarms</a>
+                        <a href="{% url 'alarms' %}" class="sf-with-ul">Alarms</a>
                     </li>
                     <li>
-                        <a href="#" class="sf-with-ul">Gallery</a>
+                        <a href="{% url 'gallery' %}" class="sf-with-ul">Gallery</a>
                     </li>
                     <li>
-                        <a href="#" class="sf-with-ul">Map</a>
+                        <a href="{% url 'map' %}" class="sf-with-ul">Map</a>
                     </li>
                     <li>
-                        <a href="#" class="sf-with-ul">About</a>
+                        <a href="{% url 'about' %}" class="sf-with-ul">About</a>
                     </li>
                 </ul>
             </nav>
