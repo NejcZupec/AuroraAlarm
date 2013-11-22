@@ -1,3 +1,5 @@
+{% load current_tag %}
+
 <header id="header">
     <!-- Main Header Start -->
     <div class="main-header">
@@ -23,19 +25,19 @@
                 <ul class="nav navbar-nav sf-menu">
                     <li>
                         <!-- TODO: Use current_tag instead of hardcoded current id. -->
-                        <a id="current" href="{% url 'home' %}">Home</a>
+                        <a id="{% current request 'home' %}" href="{% url 'home' %}">Home</a>
                     </li>
                     <li>
-                        <a href="{% url 'alarms' %}" class="sf-with-ul">Alarms</a>
+                        <a id="{% current request 'alarms' %}" href="{% url 'alarms' %}" class="sf-with-ul">Alarms</a>
                     </li>
                     <li>
-                        <a href="{% url 'gallery' %}" class="sf-with-ul">Gallery</a>
+                        <a id="{% current request 'gallery' %}" href="{% url 'gallery' %}" class="sf-with-ul">Gallery</a>
                     </li>
                     <li>
-                        <a href="{% url 'map' %}" class="sf-with-ul">Map</a>
+                        <a id="{% current request 'map' %}" href="{% url 'map' %}" class="sf-with-ul">Map</a>
                     </li>
                     <li>
-                        <a href="{% url 'about' %}" class="sf-with-ul">About</a>
+                        <a id="{% current request 'about' %}" href="{% url 'about' %}" class="sf-with-ul">About</a>
                     </li>
                 </ul>
             </nav>
