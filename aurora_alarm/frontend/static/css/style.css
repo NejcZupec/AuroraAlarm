@@ -2503,3 +2503,18 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
 .panel-group .panel,.accordionMod .accordion-group {
     margin-bottom: 15px;
 }
+
+/* -------------------- AURORA VALUE PROGRESS BAR ---------------------- */
+#aurora-value-progress-bar .value {
+    position: relative;
+    top: -60px;
+    left: -30px;
+    color: white;
+}
+
+#aurora-value-progress-bar .title {
+    color: white;
+    margin-bottom: 5px;
+    margin-left: 170px;
+    text-transform: none !important;
+}
