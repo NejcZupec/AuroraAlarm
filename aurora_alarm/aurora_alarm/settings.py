@@ -98,7 +98,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
     'PAGINATE_BY': 10
 }
 

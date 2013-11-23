@@ -10,10 +10,12 @@ class AuroraDailyForecast(models.Model):
     modified = date/time when daily forecast was updated (last time)
     first_value = aurora daily forecast value. This value is added just first time when forecast is available. (testing)
     current_value = latest parsed aurora forecast value
+    date = aurora forecast is for this day
     """
 
-    created = models.DateTimeField(auto_created=True)
+    created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     first_value = models.IntegerField()
     current_value = models.IntegerField()
+    date = models.DateField()
 
