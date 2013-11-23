@@ -17,5 +17,10 @@ def get_object_from_api(url):
     f = urllib2.urlopen(req)
     data = f.read()
     f.close()
+    object = json.loads(data)
 
-    return json.loads(data)['results'][0]
+    # if there is no data in database, return None
+    if object["count"] == 0:
+        return None
+
+    return object['results'][0]

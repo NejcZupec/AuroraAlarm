@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.contrib.auth import logout
+from django.core.urlresolvers import reverse
+from django.shortcuts import render, redirect
 from django.views import generic
 
 from datetime import date
@@ -28,4 +30,9 @@ class MapView(generic.TemplateView):
 
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
+
+
+def logout_view(request):
+    logout(request)
+    return redirect(reverse('home'))
 

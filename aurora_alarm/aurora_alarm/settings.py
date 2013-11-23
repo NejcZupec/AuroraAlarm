@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'djcelery',
     'kombu.transport.django',
+    'social.apps.django_app.default',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -92,7 +93,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages"
+    "django.contrib.messages.context_processors.messages",
+    "social.apps.django_app.context_processors.backends",
+    "social.apps.django_app.context_processors.login_redirect",
 )
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
@@ -107,4 +110,33 @@ BROKER_URL = "django://"
 
 
 API_URL = "http://127.0.0.1:8000/api/"
+
+AUTHENTICATION_BACKENDS = (
+      'social.backends.google.GoogleOAuth2',
+)
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/login-error/'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/'
+SOCIAL_AUTH_NEW_ASSOCIATION_REDIRECT_URL = '/complete/google-oauth2/'
+SOCIAL_AUTH_DISCONNECT_REDIRECT_URL = '/'
+SOCIAL_AUTH_INACTIVE_USER_URL = '/'
+
+SOCIAL_AUTH_UID_LENGTH = 223
+SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 40
+SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 40
+
+SOCIAL_AUTH_DEFAULT_USERNAME = 'new-username'
+SOCIAL_AUTH_UUID_LENGTH = 16
+SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
+SOCIAL_AUTH_SLUGIFY_USERNAMES = False
+SOCIAL_AUTH_CLEAN_USERNAMES = True
+
+SOCIAL_AUTH_SANITIZE_REDIRECTS = False
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = False
+SOCIAL_AUTH_URLOPEN_TIMEOUT = 30
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '782630118731-ctingp9rs9aqalmg78p2m4r3mtm1fs81.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'ow9mOSbf03XIAP3MRPnKyK6s'
+
 

@@ -105,10 +105,6 @@ body.boxed {
 
 @media (min-width: 980px) {
 
-nav.menu {
-    float: right !important;
-}
-
 .menu > ul li {
     float: left;
 }

@@ -23,6 +23,25 @@
             <!-- Menu Start -->
             <nav class="collapse navbar-collapse menu">
                 <ul class="nav navbar-nav sf-menu">
+                    {% if not user.username %}
+                        <li class="pull-right">
+                            <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="">{{ user.username }}
+                                <span class="sf-sub-indicator">
+                                    <i class="icon-angle-down "></i>
+                                </span>
+                            </a>
+                            <ul>
+                                <li><a href="" class="sf-with-ul">Dashboard</a></li>
+                                <li><a href="{% url 'logout' %}" class="sf-with-ul">Logout</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav sf-menu pull-right">
                     <li>
                         <a id="{% current request 'home' %}" href="{% url 'home' %}">Home</a>
                     </li>

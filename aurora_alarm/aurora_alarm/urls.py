@@ -10,4 +10,6 @@ urlpatterns = patterns('',
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     url(r'^', include('frontend.urls')),
+
+    url('', include('social.apps.django_app.urls', namespace='social')),
 )
