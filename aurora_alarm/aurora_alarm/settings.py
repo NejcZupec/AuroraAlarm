@@ -98,9 +98,13 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
     'PAGINATE_BY': 10
 }
 
 BROKER_URL = "django://"
+
+
+API_URL = "http://127.0.0.1:8000/api/"
 

@@ -11,4 +11,5 @@ class AuroraDailyForecastSet(viewsets.ModelViewSet):
     """
     queryset = AuroraDailyForecast.objects.all()
     serializer_class = AuroraDailyForecastSerializer
+    filter_fields = ["first_value", "current_value", "date"]
 
