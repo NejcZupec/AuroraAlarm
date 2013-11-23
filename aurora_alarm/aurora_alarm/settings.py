@@ -113,6 +113,7 @@ API_URL = "http://127.0.0.1:8000/api/"
 
 AUTHENTICATION_BACKENDS = (
       'social.backends.google.GoogleOAuth2',
+      'social.backends.facebook.FacebookOAuth2',
 )
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
@@ -138,5 +139,8 @@ SOCIAL_AUTH_URLOPEN_TIMEOUT = 30
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '782630118731-ctingp9rs9aqalmg78p2m4r3mtm1fs81.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'ow9mOSbf03XIAP3MRPnKyK6s'
+
+SOCIAL_AUTH_FACEBOOK_OAUTH2_KEY = ''
+SOCIAL_AUTH_FACEBOOK_OAUTH2_SECRET = ''
 
 

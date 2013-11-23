@@ -27,6 +27,9 @@
                         <li class="pull-right">
                             <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
                         </li>
+                        <li class="pull-right">
+                            <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+                        </li>
                     {% else %}
                         <li>
                             <a href="">{{ user.username }}
