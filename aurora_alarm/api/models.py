@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class AuroraDailyForecast(models.Model):
     """
     In this table are saved all aurora daily forecasts from http://www.gi.alaska.edu/AuroraForecast/Europe/.
