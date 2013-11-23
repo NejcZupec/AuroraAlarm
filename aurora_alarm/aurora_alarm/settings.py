@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'api',
     'frontend',
     'rest_framework',
+    'djcelery',
+    'kombu.transport.django',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -99,4 +101,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGINATE_BY': 10
 }
+
+BROKER_URL = "django://"
 
