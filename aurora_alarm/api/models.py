@@ -1,5 +1,40 @@
 from django.db import models
 
+class User(models.Model):
+    email = models.CharField(max_length=100)
+    threshold = models.PositiveSmallIntegerField()
+    alarm_realTime = models.BooleanField()
+    current_location = models.ForeignKey('Location')
+
+
+class Picture(models.Model):
+    picture_date = models.DateField()
+    user = models.ForeignKey('User')
+    picture_location = models.ForeignKey('Location')
+
+
+class Location(models.Model):
+    longitude = models.DecimalField(max_digits=7, decimal_places=4)
+    latitude = models.DecimalField(max_digits=7, decimal_places=4)
+
+
+class Aurora(models.Model):
+    aurora_date = models.DateField()
+
+
+class Alarm(models.Model):
+    alarm_time = models.DateTimeField()
+    alarm_aurora = models.ForeignKey('Aurora')
+    receivers = models.ManyToManyField('User')
+
+
+class WebBasedAlarm(Alarm):
+    kp_number = models.PositiveSmallIntegerField()
+
+
+class RealTimeAlarm(Alarm):
+    sender = models.ForeignKey('User')
+
 
 class AuroraDailyForecast(models.Model):
     """
