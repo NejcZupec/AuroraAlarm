@@ -11,4 +11,5 @@ router.register(r'aurora_daily_forecast', views.AuroraDailyForecastSet)
 
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),
+    url(r'^aurora_activity_chart_data_json/$', views.aurora_activity_chart_data_json),
 )

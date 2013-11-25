@@ -16,6 +16,10 @@ class HomeView(generic.TemplateView):
         return render(request, self.template_name, {"aurora_daily_forecast": aurora_daily_forecast})
 
 
+class AuroralActivityView(generic.TemplateView):
+    template_name = 'auroral_activity.html'
+
+
 class AlarmsView(generic.TemplateView):
     template_name = 'alarms.html'
 

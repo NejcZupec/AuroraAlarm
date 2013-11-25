@@ -46,29 +46,71 @@ class AuroraParser():
             self.aurora_value = None
 
 
+# TODO: Simplify!
 def save_value_to_database(date, value):
-    url = "http://127.0.0.1:8000/api/aurora_daily_forecast/"
-    data = {"current_value": value, "first_value": value, "date": date}
+    """
+    This function sends POST request to API.
+    """
+    API_URL = "http://127.0.0.1:8000/api/" #TODO: Read this setting from aurora_alarm settings.
+
+    # check if value for this date already exist
+    url = API_URL + "aurora_daily_forecast/?date=" + date
 
     req = urllib2.Request(url)
     req.add_header('Content-Type', 'application/json')
 
-    f = urllib2.urlopen(req, json.dumps(data))
-    f.close()
+    f = urllib2.urlopen(req);
+    data = f.read();
+    f.close();
+    object = json.loads(data)
 
+
+    # if there is no data for this date in database, save this value
+    if object["count"] == 0:
+        url = API_URL + "aurora_daily_forecast/"
+        data = {"current_value": value, "first_value": value, "date": date}
+
+        req = urllib2.Request(url)
+        req.add_header('Content-Type', 'application/json')
+
+        f = urllib2.urlopen(req, json.dumps(data))
+        f.close()
+
+    # data for that date already exists, just update value
+    else:
+        object_id = object["results"][0]["id"]
+        first_value = object["results"][0]["first_value"]
+
+        url = API_URL + "aurora_daily_forecast/" + str(object_id) + "/"
+        data = {"current_value": value, "first_value": first_value, "date": date}
+
+        req = urllib2.Request(url)
+        req.get_method = lambda: 'PUT'
+        req.add_header('Content-Type', 'application/json')
+
+        f = urllib2.urlopen(req, json.dumps(data))
+        f.close()
+
+def run_parser():
+    """
+    Parse all aurora activity values between 2010-01-01 and 2013-12-12.
+    """
+
+    for year in range(2011, 2014):
+        for month in range (1,13):
+            for i in range(1,31):
+                aurora_parser = AuroraParser(year, month, i)
+                date = str(year) + "-" + str(month) + "-" + str(i)
+
+                print date, aurora_parser.aurora_value
+
+                # Save values to django database. Call REST api and send POST request for each daily aurora value.
+                if aurora_parser.aurora_value != None:
+                    try:
+                        save_value_to_database(date, aurora_parser.aurora_value)
+                    except:
+                        print "Can't save to the database."
 
 
 if __name__ == '__main__':
-    year = 2013
-    month = 11
-
-    for i in range(1,31):
-        aurora_parser = AuroraParser(year, month, i)
-        date = str(year) + "-" + str(month) + "-" + str(i)
-
-        print date, aurora_parser.aurora_value
-
-        # Save values to django database. Call REST api and send POST request for each daily aurora value.
-        save_value_to_database(date, aurora_parser.aurora_value)
-
-
+    run_parser()
