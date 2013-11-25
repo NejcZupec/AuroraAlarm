@@ -93,10 +93,11 @@ def save_value_to_database(date, value):
 
 def run_parser():
     """
-    Parse all aurora activity values between 2010-01-01 and 2013-12-12.
+    Parse all aurora activity values between 2013-01-01 and 2013-12-12.
+    Be careful, this website is not reachable all the time!
     """
 
-    for year in range(2011, 2014):
+    for year in range(2013, 2014):
         for month in range (1,13):
             for i in range(1,31):
                 aurora_parser = AuroraParser(year, month, i)
