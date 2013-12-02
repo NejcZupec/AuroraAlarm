@@ -24,15 +24,14 @@
             <nav class="collapse navbar-collapse menu">
                 <ul class="nav navbar-nav sf-menu">
                     {% if not user.username %}
-                        <li class="pull-right">
-                            <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
-                        </li>
-                        <li class="pull-right">
-                            <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+                        <li>
+                            <a data-toggle="modal" data-target="#login-modal">Login</a>
                         </li>
                     {% else %}
                         <li>
-                            <a href="">{{ user.username }}
+                            <a href="">
+                                <i class="icon-user"></i>&nbsp;
+                                {{ user.username }}
                                 <span class="sf-sub-indicator">
                                     <i class="icon-angle-down "></i>
                                 </span>
@@ -70,3 +69,36 @@
     </div>
     <!-- Main Header End -->
 </header>
+
+<!-- Login modal window -->
+<div id="login-modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Login</h4>
+            </div>
+
+            <div class="modal-body">
+                <p>If you want to access AuroraAlarm user related pages, you have to authenticate yourself.
+                    Currently we support two <a target="_blank" href="http://oauth.net/2/">OAuth2</a>
+                    authentication providers:</p>
+
+                <ul>
+                    <li class="pagination-centered">
+                        <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.get_full_path }}"
+                           class="zocial googleplus">Sign in with Google+</a>
+                    </li>
+                    <li class="pagination-centered">
+                        <a href="{% url 'social:begin' 'facebook' %}?next={{ request.get_full_path }}"
+                           class="zocial facebook">Sign in with Facebook</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

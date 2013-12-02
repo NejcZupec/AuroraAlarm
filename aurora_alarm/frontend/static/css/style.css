@@ -2518,3 +2518,9 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
     margin-left: 170px;
     text-transform: none !important;
 }
+
+/* --------------------- LOGIN MODAL WINDOW ------------------------------ */
+#login-modal {
+    z-index: 10000;
+    padding-top: 100px;
+}
