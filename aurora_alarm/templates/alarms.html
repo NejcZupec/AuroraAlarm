@@ -6,6 +6,120 @@
 
 {% block content %}
     <div id="main">
+        <!-- Main Content start-->
+        <div class="content">
+            <div class="container">
+                <p>AuroraAlarm application offers two kinds of alarms: <b>daily alarms</b> and <b>real-time location based alarms</b>.
+                If you want to receive notifications you will have to provide us your email and setup a few settings. We
+                offers authentication with Google+ and Facebook accounts.
+                </p>
 
+                <br>
+
+                <!-- Daily alarms and real-time alarms -->
+                <div class="row">
+                    <div class="posts-block col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+                        <!-- Daily alarms -->
+                        <article>
+                            <h3 class="title">Daily alarms</h3>
+                            <div class="post-content">
+
+                                <!-- Your current settings (if registered), otherwise, login button. -->
+                                {% if user.is_authenticated %}
+                                    <p>Logged</p>
+
+                                {% else %}
+                                    <p class="text-justify">
+                                        Here you can sign up for Aurora daily notifications. You can select threshold and when
+                                        Auroral activity will reach this threshold, you will receive an email. All notifications
+                                        are sent at 7 in the morning (CET, Central European Time). If you want to receive
+                                        notifications, you have to sign up with Google or Facebook account and setup two settings:
+                                        email address and threshold. Click <em>Set daily alarms</em> and never miss high Auroral activity again!
+                                    </p>
+
+                                    <a class="btn-small btn-color btn-pad" data-toggle="modal" data-target="#login-modal">Set daily alarms</a>
+                                {% endif %}
+
+                                <br>
+                            </div>
+                        </article>
+
+                        <!-- Estimated notifications frequency -->
+                        <article>
+                            <h4 class="title">Estimated notifications frequency</h4>
+                            <div class="post-content">
+                                <p>Here you can see how many notification you will receive per month, based on history.
+                                Calculations are made for every auroral activity level. Select appropriate threshold
+                                according to your desire.</p>
+
+                                <table class="table table-striped table-bordered table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Activity level</th>
+                                            <th>Notifications per month</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="active">
+                                            <td>0</td>
+                                            <td>30</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>1</td>
+                                            <td>29</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>2</td>
+                                            <td>20</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>3</td>
+                                            <td>12</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>4</td>
+                                            <td>3</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>5</td>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p>
+                                    <a href="{% url 'auroral_activity' %}#auroral-activity-levels">Here</a>
+                                    you can read more about auroral activity levels.
+                                </p>
+
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Real-time locations based alarms -->
+                    <div class="posts-block col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <article>
+                            <h3 class="title">Real-time location based alarms</h3>
+                            <div class="post-content">
+
+                                {% if user.is_authenticated %}
+                                    <p>Logged</p>
+                                {% else %}
+                                    <p class="text-justify">
+                                        About real-time alarms. How system works? How many alarms will you receive for specific threshold?
+                                    </p>
+
+                                    <a class="btn-small btn-color btn-pad pull-right" data-toggle="modal" data-target="#login-modal"" href="#">Set real-time alarms</a>
+                                {% endif %}
+
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <!-- End of the row -->
+
+            </div>
+        </div>
     </div>
 {% endblock %}

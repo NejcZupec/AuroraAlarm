@@ -951,7 +951,7 @@ ol.commentlist li:first-child {
 
 /* Main Content Boxes */
 .main-content,.content {
-    padding: 60px 0 0;
+    padding: 30px 0 0;
 }
 
 .home-2 .main-content, .home-3 .main-content {
@@ -2523,4 +2523,9 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
 #login-modal {
     z-index: 10000;
     padding-top: 100px;
+}
+
+/* ----------------------- GENERAL CLASSES ------------------------------- */
+.text-justify {
+    text-align: justify !important;
 }

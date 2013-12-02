@@ -682,7 +682,7 @@ $(function() {
 		// Create the chart
 		$('#auroral-activity-chart-container').highcharts('StockChart', {
 			rangeSelector : {
-				selected : 5
+				selected : 1
 			},
 
             yAxis : {
