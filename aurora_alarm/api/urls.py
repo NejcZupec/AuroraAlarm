@@ -7,6 +7,7 @@ import views
 # Router for API navigation.
 router = DefaultRouter()
 router.register(r'aurora_daily_forecast', views.AuroraDailyForecastSet)
+router.register(r'users', views.UserViewSet)
 
 
 urlpatterns = patterns('',
