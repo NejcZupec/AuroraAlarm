@@ -1,16 +1,17 @@
+from django.contrib.auth.models import User
 from django.db import models
 
-class User(models.Model):
-    email = models.CharField(max_length=100)
+
+class UserProfile(models.Model):
+    """
+    This model is used for saving user's specific settings (threshold, location,...).
+    """
+
+    user = models.OneToOneField(User)
     threshold = models.PositiveSmallIntegerField()
-    alarm_realTime = models.BooleanField()
+    receive_daily_alarms = models.BooleanField()
+    receive_real_time_alarms = models.BooleanField()
     current_location = models.ForeignKey('Location')
-
-
-class Picture(models.Model):
-    picture_date = models.DateField()
-    user = models.ForeignKey('User')
-    picture_location = models.ForeignKey('Location')
 
 
 class Location(models.Model):
@@ -25,21 +26,17 @@ class Aurora(models.Model):
 class Alarm(models.Model):
     alarm_time = models.DateTimeField()
     alarm_aurora = models.ForeignKey('Aurora')
-    receivers = models.ManyToManyField('User')
+    #receivers = models.ManyToManyField('User')
 
 
 class WebBasedAlarm(Alarm):
     kp_number = models.PositiveSmallIntegerField()
 
 
-class RealTimeAlarm(Alarm):
-    sender = models.ForeignKey('User')
-
-
 class AuroraDailyForecast(models.Model):
     """
     In this table are saved all aurora daily forecasts from http://www.gi.alaska.edu/AuroraForecast/Europe/.
-    This data is collected with the celery task, executed every 5 minutes.
+    This data is collected with the celery task, executed every day.
 
     created = date/time when daily forecast was added
     modified = date/time when daily forecast was updated (last time)
