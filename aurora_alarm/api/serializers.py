@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from models import AuroraDailyForecast
+from models import AuroraDailyForecast, UserProfile
+
 
 class AuroraDailyForecastSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -8,7 +9,13 @@ class AuroraDailyForecastSerializer(serializers.HyperlinkedModelSerializer):
         fields = ["date", "first_value", "current_value", "created", "modified", "url", "id"]
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("url", "username", "email", "groups")
+        fields = ["id", "username", "email", "groups", "userprofile"]
+
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = ["user", "threshold", "receive_daily_alarms", "receive_real_time_alarms"]

@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models.signals import post_save
 
 
 class UserProfile(models.Model):
@@ -8,10 +9,9 @@ class UserProfile(models.Model):
     """
 
     user = models.OneToOneField(User)
-    threshold = models.PositiveSmallIntegerField()
-    receive_daily_alarms = models.BooleanField()
-    receive_real_time_alarms = models.BooleanField()
-    current_location = models.ForeignKey('Location')
+    threshold = models.PositiveSmallIntegerField(default=4)
+    receive_daily_alarms = models.BooleanField(default=False)
+    receive_real_time_alarms = models.BooleanField(default=False)
 
 
 class Location(models.Model):
@@ -51,3 +51,10 @@ class AuroraDailyForecast(models.Model):
     current_value = models.IntegerField()
     date = models.DateField()
 
+
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+       profile, created = UserProfile.objects.get_or_create(user=instance)
+
+# This will create a userprofile each time a user is saved if it is created.
+post_save.connect(create_user_profile, sender=User)

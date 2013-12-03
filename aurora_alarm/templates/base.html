@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="{{ STATIC_URL }}css/graph.css" media="screen">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/team-member.css" media="screen">
         <link rel="stylesheet" href="{{ STATIC_URL }}css/social-buttons/zocial.css" media="screen">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/onoffswitch.css" media="screen">
         <!-- Theme CSS -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
         <!-- Skin -->
@@ -84,5 +85,8 @@
 
         <!-- The Scripts -->
         {% include 'scripts.html' %}
+
+        <!-- Additional Scripts -->
+        {% block add_script %}{% endblock %}
     </body>
 </html>

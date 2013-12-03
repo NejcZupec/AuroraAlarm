@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth import logout
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
@@ -22,6 +23,9 @@ class AuroralActivityView(generic.TemplateView):
 
 class AlarmsView(generic.TemplateView):
     template_name = 'alarms.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {"API_URL": settings.API_URL})
 
 
 class GalleryView(generic.TemplateView):

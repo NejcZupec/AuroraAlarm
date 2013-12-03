@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from models import AuroraDailyForecast
+from models import AuroraDailyForecast, UserProfile
 from rest_framework import viewsets, permissions
-from serializers import AuroraDailyForecastSerializer, UserSerializer
+from serializers import AuroraDailyForecastSerializer, UserSerializer, UserProfileSerializer
 
 import json, datetime
 
@@ -23,6 +23,15 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = (permissions.IsAdminUser, )
+
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    """
+
+    """
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
+    filter_fields = ["user"]
 
 
 def aurora_activity_chart_data_json(request):

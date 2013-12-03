@@ -2529,3 +2529,13 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
 .text-justify {
     text-align: justify !important;
 }
+
+/* ------------------------ ALARMS SITE ---------------------------------- */
+#success-text {
+    position: relative;
+    top: 28px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
