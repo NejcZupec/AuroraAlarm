@@ -180,15 +180,14 @@
 
 
 {% block add_script %}
-    <!-- Pass important variables to JavaScript! -->
-    <script>
-        var API_URL = "{{ API_URL }}";
-        var user_id = "{{ user.id }}";
-    </script>
-
     {% if user.is_authenticated %}
+        <!-- Pass important variables to JavaScript! -->
+        <script>
+            var user_id = "{{ user.id }}";
+        </script>
+
         <!-- Include alarms.js. This script includes AJAX form for daily alarms settings. -->
-        <script src="{{ STATIC_URL }}js/alarms.js"></script>
+        <script src="{{ STATIC_URL }}js/frontend/alarms.js"></script>
     {% endif %}
 {% endblock %}
 

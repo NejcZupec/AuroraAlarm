@@ -96,6 +96,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.messages.context_processors.messages",
     "social.apps.django_app.context_processors.backends",
     "social.apps.django_app.context_processors.login_redirect",
+    "aurora_alarm.context_processors.pass_global_variables",
 )
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
