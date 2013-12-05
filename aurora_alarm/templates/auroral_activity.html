@@ -79,3 +79,8 @@
         <!-- Main Content end-->
     </div>
 {% endblock %}
+
+{% block add_script %}
+    <!-- Include aurora-activity.js. This script creates auroral activity graph. -->
+    <script src="{{ STATIC_URL }}js/frontend/auroral-activity.js"></script>
+{% endblock %}
