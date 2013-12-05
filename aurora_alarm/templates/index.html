@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
 
-{% block breadcrumb %}
-
-{% endblock %}
-
-{% load progress_bar_interval %}
+{% block breadcrumb %}{% endblock %}
 
 {% block content %}
     <!-- Content Start -->
@@ -70,27 +66,25 @@
                        <a class="btn-special hidden-xs btn-grey" href="{% url 'auroral_activity' %}">Start Here</a>
                     </div>
 
-                    {% if aurora_daily_forecast %}
-                        <div class="caption lfb progress-bar-aurora fadeout tp-caption start"
-                            data-x="750"
-                            data-y="173"
-                            data-speed="500"
-                            data-endspeed="300"
-                            data-start="100"
-                            data-hoffset="-70"
-                            data-easing="easeOutExpo">
+                    <div class="caption lfb progress-bar-aurora fadeout tp-caption start"
+                        data-x="750"
+                        data-y="173"
+                        data-speed="500"
+                        data-endspeed="300"
+                        data-start="100"
+                        data-hoffset="-70"
+                        data-easing="easeOutExpo">
 
-                            <div id="aurora-value-progress-bar" class="pull-right">
-                                <h2 class="title">Current AuroraActivity</h2>
+                        <div id="aurora-value-progress-bar" class="pull-right" style="display: none">
+                            <h2 class="title">Current AuroraActivity</h2>
 
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" style="width: {% progress_bar_interval aurora_daily_forecast.current_value %}%"></div>
-                                </div>
-
-                                <h1 class="value">{{ aurora_daily_forecast.current_value }}</h1>
+                            <div class="progress progress-striped">
+                                <div class="progress-bar progress-bar-success" role="progressbar"></div>
                             </div>
+
+                            <h1 id="current-aurora-value" class="value"></h1>
                         </div>
-                    {% endif %}
+                    </div>
                  </li>
               </ul>
            </div>
@@ -229,5 +223,10 @@
 
     </div>
     <!-- Content End -->
+{% endblock %}
+
+{% block add_script %}
+    <!-- Include index.js. This script get current auroral activity level with an AJAX call. -->
+    <script src="{{ STATIC_URL }}js/frontend/index.js"></script>
 {% endblock %}
 
