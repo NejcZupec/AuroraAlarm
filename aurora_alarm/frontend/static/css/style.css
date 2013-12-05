@@ -2539,3 +2539,19 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
     padding-left: 10px;
     padding-right: 10px;
 }
+
+/* -------------------------- HOME SITE ----------------------------------- */
+#auroral-activity-icon i {
+    position: relative;
+    left: 34px;
+}
+
+#alarms-icon i {
+    position: relative;
+    left: 27px;
+}
+
+#gallery-icon i {
+    position: relative;
+    left: 25px;
+}
