@@ -18,7 +18,7 @@ $( document ).ready(function() {
     "When values are changed, save them with AJAX request."
     $('#daily-alarms-settings-form select, #myonoffswitch').change(function() {
 
-        if ($('#myonoffswitch').prop("checked")) {
+        if ($('#myonoffswitch').is(":checked")) {
             var notifications = true;
         } else {
             var notifications = false;
