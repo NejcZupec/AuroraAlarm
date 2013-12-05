@@ -10,6 +10,8 @@ The basic idea of the application is that you will never miss aurora activity ne
 
 This project is a part of Design of Dynamic Web Systems course at Luleå University of Technology.
 
+Current stable version is accessible at Heroku: http://aurora-alarm.herokuapp.com/
+
 Setup development environment
 -----------------------------
 Here are the instructions, how to setup a development environment.
@@ -59,3 +61,16 @@ Requirements
 * Celery 3.1.5
 * Python Social Auth 0.1.17
 * Django REST Framework 2.3.8
+
+Links
+-----
+* Documentation: https://auroraalarm.readthedocs.org/
+* Course site: https://sites.google.com/a/ltu.se/m7011e-2013/
+* Deployed version at Heroku: http://aurora-alarm.herokuapp.com/
+* Issues and roadmap: https://github.com/Gupi/AuroraAlarm/issues
+
+Contributors
+------------
+* Nejc Zupec
+* Prisca Bonnet
+
