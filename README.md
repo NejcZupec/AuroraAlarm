@@ -12,8 +12,8 @@ This project is a part of Design of Dynamic Web Systems course at Luleå Univers
 
 Current stable version is accessible at Heroku: http://aurora-alarm.herokuapp.com/
 
-Setup development environment
------------------------------
+Installation
+------------
 Here are the instructions, how to setup a development environment.
 
 The following **prerequisites** are required to run AuroraAlarm:
@@ -21,6 +21,7 @@ The following **prerequisites** are required to run AuroraAlarm:
 * Virtualenv
 * Pip (1.0+)
 
+*Note: we are assuming that you are running an UNIX-like operating system.*
 
 Create a new virtual environment and activate it:
     
@@ -49,6 +50,7 @@ Open a web browser and go to:
 
     http://127.0.0.1:8000
 
+That's it, you have successfully installed AuroraAlarm application :)
 
 Documentation
 -------------
