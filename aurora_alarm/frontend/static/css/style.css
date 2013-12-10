@@ -2555,3 +2555,7 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
     position: relative;
     left: 25px;
 }
+
+#map-canvas { 
+    height: 666px; 
+}
