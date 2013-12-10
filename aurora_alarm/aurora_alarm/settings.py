@@ -1,3 +1,6 @@
+from photologue import PHOTOLOGUE_APP_DIR
+
+
 """
 Django settings for aurora_alarm project.
 
@@ -84,11 +87,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'aurora_alarm/../frontend/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/static')
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'aurora_alarm/../frontend/static/photologue') 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'frontend/static/photologue')
 
 MEDIA_URL = '/static/photologue/'
 
@@ -106,7 +109,15 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "aurora_alarm.context_processors.pass_global_variables",
 )
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+    PHOTOLOGUE_APP_DIR,
+)
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
@@ -153,4 +164,3 @@ SOCIAL_AUTH_FACEBOOK_KEY = '427395604059121'
 SOCIAL_AUTH_FACEBOOK_SECRET = '3796e1925d7188631dbef9bc88c32c42'
 
 AUTH_PROFILE_MODULE = 'api.UserProfile'
-

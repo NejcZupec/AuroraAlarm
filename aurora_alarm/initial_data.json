@@ -1,0 +1,136 @@
+[
+    {
+        "fields": {
+            "date_added": "2013-12-10T19:07:11Z",
+            "description": "",
+            "is_public": true,
+            "photos": [
+                4,
+                3,
+                2,
+                1
+            ],
+            "tags": "",
+            "title": "Aurora Gallery",
+            "title_slug": "aurora-gallery"
+        },
+        "model": "photologue.gallery",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "caption": "",
+            "crop_from": "center",
+            "date_added": "2013-12-10T19:07:32Z",
+            "date_taken": "2013-12-10T19:07:54.326Z",
+            "effect": null,
+            "image": "photologue/photos/aurora1.png",
+            "is_public": true,
+            "tags": "",
+            "title": "Aurora 1",
+            "title_slug": "aurora-1",
+            "view_count": 4
+        },
+        "model": "photologue.photo",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "caption": "",
+            "crop_from": "center",
+            "date_added": "2013-12-10T19:08:58Z",
+            "date_taken": "2013-12-10T19:09:09.020Z",
+            "effect": null,
+            "image": "photologue/photos/aurora2.png",
+            "is_public": true,
+            "tags": "",
+            "title": "Aurora 2",
+            "title_slug": "aurora-2",
+            "view_count": 4
+        },
+        "model": "photologue.photo",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "caption": "",
+            "crop_from": "center",
+            "date_added": "2013-12-10T19:09:14Z",
+            "date_taken": "2013-12-10T19:09:24.267Z",
+            "effect": null,
+            "image": "photologue/photos/aurora3.png",
+            "is_public": true,
+            "tags": "",
+            "title": "Aurora 3",
+            "title_slug": "aurora-3",
+            "view_count": 4
+        },
+        "model": "photologue.photo",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "caption": "",
+            "crop_from": "center",
+            "date_added": "2013-12-10T19:10:07Z",
+            "date_taken": "2013-12-10T19:10:16.174Z",
+            "effect": null,
+            "image": "photologue/photos/aurora4.png",
+            "is_public": true,
+            "tags": "",
+            "title": "Aurora 4",
+            "title_slug": "aurora-4",
+            "view_count": 4
+        },
+        "model": "photologue.photo",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "crop": true,
+            "effect": null,
+            "height": 75,
+            "increment_count": true,
+            "name": "admin_thumbnail",
+            "pre_cache": true,
+            "quality": 70,
+            "upscale": false,
+            "watermark": null,
+            "width": 100
+        },
+        "model": "photologue.photosize",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "crop": true,
+            "effect": null,
+            "height": 75,
+            "increment_count": true,
+            "name": "thumbnail",
+            "pre_cache": true,
+            "quality": 70,
+            "upscale": false,
+            "watermark": null,
+            "width": 100
+        },
+        "model": "photologue.photosize",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "crop": false,
+            "effect": null,
+            "height": 0,
+            "increment_count": true,
+            "name": "display",
+            "pre_cache": true,
+            "quality": 70,
+            "upscale": false,
+            "watermark": null,
+            "width": 400
+        },
+        "model": "photologue.photosize",
+        "pk": 3
+    }
+]
