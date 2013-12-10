@@ -13,8 +13,8 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h3 class="title">About AuroraAlarm Project</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+						<p>AuroraAlarm is a Computer Science student project. This website's purpose it to offer free real-time alarms and photo sharing for Auroras. We tried to focus on ergonomics, usability and simplicity.</p>
+                        <p>We are two Erasmus student spending six months in Lule&aring;. We decided to create this website because we were really excited about Auroras and we couldn't find any good way to be notified for Auroras.</p>
                         <br>
                     </div>
                 </div>
@@ -23,21 +23,20 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h3 class="title">How AuroraAlarm Works</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-
+                        <p>After logging in using Facebook or Google, the user can upload pictures of Auroras and suscribe to alarms, in order to be notified when he's likely to see an Aurora. We distinguish two types of Alarms : Daily alarms and real-time alarms.</p>
+                        <p>Daily alarms are based on the forecast from the <a href="http://www.gi.alaska.edu/AuroraForecast/">Geophysical Institute of University of Alaska Fairbanks</a>. Our website get the daily forecast everyday. Users can set a treshold and receive an email everytime the forecast reaches that treshold.</p>
+                        <p>Real-time alarms rely on the user community. Whenever he's seeing an Aurora, any user can send a notification to every nearby users who activated this option. This feature is based on the different users' current location.
+                        </p>
                         <br>
-
                         <div class="row">
                             <div class="col-lg-2"></div>
                             <div class="col-lg-8">
-                                <img src="{{ STATIC_URL }}/img/about/aurora_alarm_diagram.png" width=""/>
+                                <img src="{{ STATIC_URL }}/img/about/real-time-alarm_map.png" width=""/>
                             </div>
                             <div class="col-lg-2"></div>
                         </div>
-
                         <br>
-
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <p>At any time, the user can update his current location and modify his notification settings.</p>
                         <br>
                     </div>
                 </div>
@@ -46,8 +45,29 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h3 class="title">Technology Stack and Architecture</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <p>Our architecture relies on a Django server, based on the MVC software pattern. The model is served by a PostgreSQL database. We use Gunicorn as WSGI HTTP Server. Our application is deployed on Heroku, a PaaS adapted to our project.</p>
+                        <p>We use Celery for asynchronous tasks. With Celery, we can schedule regular tasks like parsing the daily forecast. It is also needed for demanding unexpected tasks, for example to send real-time alarms.</p>
+                        <p>The client will access our app with his web browser. He can access our application via HTML requests. Note that interactions with the model will occur through the REST API.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-8">
+                                <img src="{{ STATIC_URL }}/img/about/aurora_alarm_diagram.png" width=""/>
+                            </div>
+                            <div class="col-lg-2"></div>
+                        </div>
+                        <br>
+                        <p> We used the following technologies : 
+                            <dl>
+                                <dt> Django </dt>
+                                    <dd>- Photologue for the gallery </dd>
+                                    <dd>- DjangoREST Framework for the REST API </dd>
+                                    <dd>- Celery for asynchronous tasks </dd>
+                                <dt> Twitter Bootstrap for UI/UX </dt>
+                                <dt> Facebook/Google API for authentification</dt>
+                                <dt> Google Maps API </dt>
+                            </dl>
+                        </p>
                         <br>
                     </div>
                 </div>
