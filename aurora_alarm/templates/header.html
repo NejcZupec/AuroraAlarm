@@ -54,7 +54,7 @@
                         <a id="{% current request 'alarms' %}" href="{% url 'alarms' %}" class="sf-with-ul">Alarms</a>
                     </li>
                     <li>
-                        <a  href="/gallery" class="sf-with-ul">Gallery</a>
+                        <a id="{% current request '/gallery/' True %}"  href="{% url 'pl-gallery-archive' %}" class="sf-with-ul">Gallery</a>
                     </li>
                     <li>
                         <a id="{% current request 'map' %}" href="{% url 'map' %}" class="sf-with-ul">Map</a>
