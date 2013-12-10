@@ -88,7 +88,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'aurora_alarm/../frontend/static')
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, STATIC_URL) 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'aurora_alarm/../frontend/static/photologue') 
+
+MEDIA_URL = '/static/photologue/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
@@ -151,7 +153,4 @@ SOCIAL_AUTH_FACEBOOK_KEY = '427395604059121'
 SOCIAL_AUTH_FACEBOOK_SECRET = '3796e1925d7188631dbef9bc88c32c42'
 
 AUTH_PROFILE_MODULE = 'api.UserProfile'
-
-#Gallery settings
-PHOTOLOGUE_DIR = 'img'
 
