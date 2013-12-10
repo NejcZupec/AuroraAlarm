@@ -25,7 +25,7 @@ def current(request, name, by_path=False):
         return 'current'
 
     # Here is a hack for the gallery.
-    if request.path[:9] == path:
+    if request.path[:7] == path:
         return 'current'
 
     return ''

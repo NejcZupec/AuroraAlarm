@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Photo{% endblock %}
+
+{% block breadcrumb_title %}Add Photo{% endblock %}
+
+{% block content %}
+    <div id="main">
+        <div class="container">
+            <br>
+            <form action="" method="post" accept-charset="utf-8" enctype="multipart/form-data">{% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" name="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block add_script %}
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHrsfQd7mLb53cHUNsiMntZ-YEHv6WvHw&sensor=true">
+    </script>
+    <script src="{{ STATIC_URL }}js/frontend/map.js"></script>
+{% endblock %}
