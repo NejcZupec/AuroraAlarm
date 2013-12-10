@@ -5,14 +5,14 @@
 {% block breadcrumb_title %}Map{% endblock %}
 
 {% block content %}
-<!--    <div id="main"> -->
+    <div id="main">
         <div id="map-canvas"/>
-<!--    </div> -->
+    </div>
 {% endblock %}
 
 {% block add_script %}
     <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHrsfQd7mLb53cHUNsiMntZ-YEHv6WvHw&sensor=true">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHrsfQd7mLb53cHUNsiMntZ-YEHv6WvHw&sensor=true">
     </script>
     <script src="{{ STATIC_URL }}js/frontend/map.js"></script>
 {% endblock %}
