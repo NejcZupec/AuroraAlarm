@@ -1,10 +1,11 @@
 AuroraAlarm
 ===========
-AuroraAlarm is a simple web application for monitoring auroral activity. It consists of three main parts: 
+AuroraAlarm is a simple web application for monitoring auroral activity. It consists of four main parts: 
 
 1. **Aurora Activity** - check history and forecast of auroral activity
 2. **Aurora Alarms** - set aurora notifications
 3. **Aurora Gallery** - upload and share the nicest images of aurora
+4. **Aurora Map** - check where you can see the nicest aurora
 
 The basic idea of the application is that you will never miss aurora activity near your location. You can sign up for notifications and when aurora will be active, you will receive an email. At the moment it works just in Europe. 
 
@@ -41,7 +42,11 @@ Synchronize the database and django application. The wizard will ask you to crea
 
     cd aurora_alarm
     python manage.py syncdb
-    
+
+Load initial database objects:
+
+    python manage.py loaddata initial_data
+
 Now you are ready to run application:
 
     python manage.py runserver
