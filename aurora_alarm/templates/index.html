@@ -96,7 +96,7 @@
            <div class="container">
               <div class="row">
 
-                 <div class="col-lg-4 col-md-4 col-sm-4">
+                 <div class="col-lg-3 col-md-3 col-sm-3">
                     <div class="content-box big ch-item">
                        <a href="{% url 'auroral_activity' %}">
                           <div id="auroral-activity-icon" class="ch-info-wrap">
@@ -118,7 +118,7 @@
                     </div>
                  </div>
 
-                 <div class="col-lg-4 col-md-4 col-sm-4">
+                 <div class="col-lg-3 col-md-3 col-sm-3">
                     <div class="content-box big ch-item bottom-pad-small">
                        <a href="{% url 'alarms' %}">
                           <div id="alarms-icon" class="ch-info-wrap">
@@ -134,13 +134,13 @@
                           <h3>Alarms</h3>
                           <p>
                              Setup AuroraAlarm notifications and never miss Aurora activity near you.
-                          </p><br>
+                          </p>
                        </div>
                     </div>
                  </div>
-                 <div class="col-lg-4 col-md-4 col-sm-4">
+                 <div class="col-lg-3 col-md-3 col-sm-3">
                     <div class="content-box big ch-item bottom-pad-small">
-                       <a href="/gallery">
+                       <a href="{% url 'pl-gallery-archive' %}">
                           <div id="gallery-icon" class="ch-info-wrap">
                              <div class="ch-info">
                                 <div class="ch-info-front ch-img-1"><i class="icon-picture"></i></div>
@@ -160,14 +160,16 @@
                  </div>
                  <div class="col-lg-3 col-md-3 col-sm-3">
                     <div class="content-box big ch-item">
-                       <div class="ch-info-wrap">
-                          <div class="ch-info">
-                             <div class="ch-info-front ch-img-1"><i class="icon-map-marker"></i></div>
-                             <div class="ch-info-back">
-                                <i class="icon-map-marker"></i>
+                       <a href="{% url 'map' %}">
+                          <div class="ch-info-wrap">
+                             <div id="map-icon" class="ch-info">
+                                <div class="ch-info-front ch-img-1"><i class="icon-map-marker"></i></div>
+                                <div class="ch-info-back">
+                                   <i class="icon-map-marker"></i>
+                                </div>
                              </div>
                           </div>
-                       </div>
+                       </a>
                        <div class="content-box-info">
                           <h3>Map</h3>
                           <p>

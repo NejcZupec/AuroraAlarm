@@ -2556,6 +2556,12 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
     left: 25px;
 }
 
+#map-icon i {
+    position: relative;
+    left: 31px;
+}
+
+/* ---------------------------- MAP SITE ----------------------------------- */
 #map-canvas { 
     height: 666px; 
 }
