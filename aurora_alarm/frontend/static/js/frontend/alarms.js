@@ -1,12 +1,11 @@
 $( document ).ready(function() {
-
+	var means = [30, 29, 20, 12, 3, 1];
     "Get user specific values through API and prepare form values."
     $.ajax({
         type: "GET",
         url: API_URL + "user_profiles/?user=" + user_id,
         success: function(data) {
             $('#select-threshold').val(data.results[0].threshold);
-
             if (data.results[0].receive_daily_alarms == true) {
                 $('#myonoffswitch-daily').prop("checked", "true");
             } else {
@@ -25,6 +24,7 @@ $( document ).ready(function() {
 
             var lat_and_long = data.results[0].latitude + ", " + data.results[0].longitude;
             $("#city").geocomplete("find", lat_and_long);
+            updateSummary();
         }
     });
 
@@ -70,6 +70,7 @@ $( document ).ready(function() {
             success: function(data) {
                 $('#success-text').show(100);
                 $('#success-text').delay(1500).fadeOut(1000);
+                updateSummary();
             }
         });
     });
@@ -104,9 +105,28 @@ $( document ).ready(function() {
                 success: function(data) {
                     $('#success-text-real-time').show(100);
                     $('#success-text-real-time').delay(1500).fadeOut(1000);
+                	updateSummary();
                 }
             });
         }, 500);
 
     });
+    function updateSummary() {
+		console.log("updating");
+		if ($('#myonoffswitch-daily').is(":checked")) {
+		    var value = $('#select-threshold option:selected').text();
+			var text = "You will receive a notification, when auroral activity will be equal or above " + value +". Based on notifications history, you will receive approximately " + means[value] + " emails per month.";                
+		    $('#summary-daily').prop('textContent', text);
+		} else {
+		console.log('false');
+		    $('#summary-daily').prop('textContent', 'Switch daily alarms on to get notifications.');
+		}
+		if ($('#myonoffswitch-real').is(":checked")) {
+			var text = "You will receive an email, when someone will notify others inside " + $('#select-radius').val() + "km around your position."              
+		    $('#summary-real').prop('textContent', text);
+		} else {
+		console.log('false');
+		    $('#summary-real').prop('textContent', 'Switch real-time alarms on to get notifications.');
+		}
+}
 });

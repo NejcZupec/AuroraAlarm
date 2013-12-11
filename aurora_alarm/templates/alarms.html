@@ -79,10 +79,8 @@
 
                                     <h4>Summary of your settings</h4>
                                     <!-- Read these values from database. Update them, when user makes changes. -->
-                                    <p class="text-justify">
-                                        You will receive a notification, when auroral activity will be equal or above 4.
-                                        Based on notifications history, you will receive approximately 5 emails per month.
-                                    </p>
+                                    <div id="summary-daily" class="text-justify">
+                                    </div>
 
                                 {% else %}
                                     <p class="text-justify">
@@ -115,7 +113,7 @@
                                             <th>Notifications per month</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="table-month">
                                         <tr class="active">
                                             <td>0</td>
                                             <td>30</td>
@@ -242,9 +240,8 @@
 
                                     <br>
                                     <h4>Summary of your settings</h4>
-                                    <p class="text-justify">
-                                        You will receive an email, when someone will notify others inside your radius.
-                                    </p>
+                                    <div id="summary-real" class="text-justify">
+                                    </div>
 
                                 {% else %}
                                     <p class="text-justify">
