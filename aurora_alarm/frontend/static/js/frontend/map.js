@@ -1,31 +1,45 @@
-    var locations = [
-        new google.maps.LatLng(65.585, 22.151),
-        new google.maps.LatLng(65.589, 22.148),
-        new google.maps.LatLng(65.583, 22.155),
-        new google.maps.LatLng(65.580, 22.145)
-    ];
-    var images = [
-        '<img border="0" src="./aa.JPG">',
-        '<img border="0" src="./aa2.JPG">',
-        '<img border="0" src="./aa3.JPG">',
-        '<img border="0" src="./aa4.JPG">'
-    ];
-    var markers = [];
-    var iterator = 0;
-    var map;
+var locations = [];
+var images = [];
+var markers = [];
+var iterator = 0;
+var map;
 $( document ).ready(function() {
-    console.log("Hello world");
-    google.maps.event.addDomListener(window, 'load', initialize);
+    google.maps.event.addDomListener(window, 'load', loadPhotos);
 });
 
+function loadPhotos() {
+    getPhotos(API_URL + "photo_with_location");
+}
+
+function getPhotos(url) {
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function(data) {
+            for (var i = 0; i < data.results.length; i++) {
+                var result = data.results[i];
+                var location = new google.maps.LatLng(result.latitude, result.longitude);
+                locations.push(location);
+                var path = result.image;
+                images.push('<img border="0" src="/static/photologue/' + path + '">');
+            }
+            url = data.next;
+            if (url) {
+                getPhotos(url);
+            } else {
+                initialize();
+            }
+        }
+    });
+}
+
 function initialize() {
-    console.log("Initialization...");
     var myLatlng = new google.maps.LatLng(65.585, 22.151);
     var mapOptions = {
         center: myLatlng,
-        zoom: 14
+        zoom: 11
     };
-    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);   
+    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     drop();
 }
 function drop() {
