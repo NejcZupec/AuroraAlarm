@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, url, include
 from django.views.generic import CreateView
-from photologue.models import Photo
+from models import PhotoWithLocation
+from views import PhotoWithLocationListView
 
 import views
 
@@ -14,5 +15,6 @@ urlpatterns = patterns('',
 
     # gallery
     url(r'^', include('photologue.urls')),
-    url(r'^photo/add$', CreateView.as_view(model=Photo, success_url="/photo/page/1"), name="gallery-add-photo")
+    url(r'^photo-with-location/add$', CreateView.as_view(model=PhotoWithLocation, success_url="/photo-with-location/page/1"), name="gallery-add-photo"),
+    url(r'^photo-with-location/page/(?P<page>[0-9]+)/$', PhotoWithLocationListView.as_view(), name='photo-with-location-list'),
 )

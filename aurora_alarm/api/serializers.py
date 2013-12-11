@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from frontend.models import PhotoWithLocation
 from rest_framework import serializers
 from models import AuroraDailyForecast, UserProfile
 
@@ -20,3 +21,9 @@ class UserProfileSerializer(serializers.ModelSerializer):
         model = UserProfile
         fields = ["user", "threshold", "receive_daily_alarms", "receive_real_time_alarms",
                     "radius", "longitude", "latitude"]
+
+
+class PhotoWithLocationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PhotoWithLocation
+

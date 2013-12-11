@@ -1,9 +1,9 @@
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from frontend.models import PhotoWithLocation
 from models import AuroraDailyForecast, UserProfile
 from rest_framework import viewsets, permissions
-from serializers import AuroraDailyForecastSerializer, UserSerializer, UserProfileSerializer
-
+from serializers import AuroraDailyForecastSerializer, UserSerializer, UserProfileSerializer, PhotoWithLocationSerializer
 import json, datetime
 
 
@@ -32,6 +32,14 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
     filter_fields = ["user"]
+
+
+class PhotoWithLocationViewSet(viewsets.ModelViewSet):
+    """
+
+    """
+    queryset = PhotoWithLocation.objects.all()
+    serializer_class = PhotoWithLocationSerializer
 
 
 def aurora_activity_chart_data_json(request):

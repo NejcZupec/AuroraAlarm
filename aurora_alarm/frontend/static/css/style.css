@@ -2574,3 +2574,13 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
 #map-canvas { 
     height: 666px; 
 }
+
+#map-canvas label,
+#map-canvas-location label{
+  width: auto; display:inline;
+}
+
+#map-canvas img,
+#map-canvas-location img{
+  max-width: none;
+}
