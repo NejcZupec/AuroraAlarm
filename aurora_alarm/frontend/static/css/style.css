@@ -470,7 +470,7 @@ h2.title {
 /* Main Content */
 #main {
     background-color: #fff;
-	padding: 0 0 60px;
+	padding: 0 0 0 0;
 }
 
 .home #main, .home-2 #main, .home-3 #main, .page-services #main, .about #main {
@@ -2538,6 +2538,14 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
     padding-bottom: 4px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+#map-canvas-location {
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 524px !important;
+    height: 300px !important;
 }
 
 /* -------------------------- HOME SITE ----------------------------------- */

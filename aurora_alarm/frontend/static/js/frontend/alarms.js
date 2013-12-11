@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-    "Get current threshold value for specific user and prepare form values."
+    "Get user specific values through API and prepare form values."
     $.ajax({
         type: "GET",
         url: API_URL + "user_profiles/?user=" + user_id,
@@ -12,11 +12,33 @@ $( document ).ready(function() {
             } else {
                 $('#myonoffswitch').removeProp("checked");
             }
+
+            $('#select-radius').val(data.results[0].radius);
+            $('#lng').val(data.results[0].longitude);
+            $('#lat').val(data.results[0].latitude);
+
+            var lat_and_long = data.results[0].latitude + ", " + data.results[0].longitude;
+            $("#city").geocomplete("find", lat_and_long);
         }
     });
 
-    "When values are changed, save them with AJAX request."
-    $('#daily-alarms-settings-form select, #myonoffswitch').change(function() {
+    "Setup autocomplete for city search and turn on geocomplete."
+    $("#city").geocomplete({
+        map: "#map-canvas-location",
+        details: "form",
+        markerOptions: {
+            draggable: true
+        }
+    });
+
+    "Bind marker and longitude/latitude fields."
+    $("#city").bind("geocode:dragged", function(event, latLng) {
+        $("input[name=lat]").val(latLng.lat()).change();
+        $("input[name=lng]").val(latLng.lng()).change();
+    });
+
+    "When values are changed (daily alarms), save them with AJAX request."
+    $('#daily-alarms-settings-form').change(function() {
 
         if ($('#myonoffswitch').is(":checked")) {
             var notifications = true;
@@ -39,4 +61,25 @@ $( document ).ready(function() {
         });
     });
 
+    "When values are changed (real-time alarms), save them with AJAX request."
+    $('#real-time-alarms-settings-form, #city').change(function() {
+
+        $.ajax({
+            type: "PUT",
+            url: API_URL + "user_profiles/" + user_id + "/",
+            delay: 500,
+            data: {
+                'user': parseInt(user_id),
+                'longitude': $('#lng').val(),
+                'latitude': $('#lat').val(),
+                'radius': $('#select-radius').val()
+            },
+            success: function(data) {
+                $('#success-text-real-time').show(100);
+                $('#success-text-real-time').delay(1500).fadeOut(1000);
+            }
+        });
+
+        console.log($('#lng').val());
+    });
 });

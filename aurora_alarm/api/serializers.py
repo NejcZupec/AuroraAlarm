@@ -18,4 +18,5 @@ class UserSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
-        fields = ["user", "threshold", "receive_daily_alarms", "receive_real_time_alarms"]
+        fields = ["user", "threshold", "receive_daily_alarms", "receive_real_time_alarms",
+                    "radius", "longitude", "latitude"]

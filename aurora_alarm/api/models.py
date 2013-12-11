@@ -12,11 +12,9 @@ class UserProfile(models.Model):
     threshold = models.PositiveSmallIntegerField(default=4)
     receive_daily_alarms = models.BooleanField(default=False)
     receive_real_time_alarms = models.BooleanField(default=False)
-
-
-class Location(models.Model):
-    longitude = models.DecimalField(max_digits=7, decimal_places=4)
-    latitude = models.DecimalField(max_digits=7, decimal_places=4)
+    radius = models.IntegerField(default=50)
+    longitude = models.DecimalField(max_digits=20, decimal_places=17, default=65.58388959999999)
+    latitude = models.DecimalField(max_digits=20, decimal_places=17, default=22.153173599999946)
 
 
 class Aurora(models.Model):
@@ -54,7 +52,7 @@ class AuroraDailyForecast(models.Model):
 
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
-       profile, created = UserProfile.objects.get_or_create(user=instance)
+       UserProfile.objects.get_or_create(user=instance)
 
 # This will create a userprofile each time a user is saved if it is created.
 post_save.connect(create_user_profile, sender=User)

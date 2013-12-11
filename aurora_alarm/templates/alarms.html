@@ -158,11 +158,103 @@
                             <div class="post-content">
 
                                 {% if user.is_authenticated %}
-                                    <p>Logged</p>
+                                    <p class="text-justify">
+                                        Here you can setup real-time location based notifications. Set your current location,
+                                        select radius and turn on notifications.
+                                    </p>
+
+                                    <form id="real-time-alarms-settings-form">
+                                        <div class="form-group">
+
+                                            <!-- Notifications settings -->
+                                            <div class="col-sm-3">
+                                                <label for="select-notifications">Notifications</label>
+
+                                                <div class="onoffswitch">
+                                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="onoffswitch-realtime">
+                                                    <label class="onoffswitch-label" for="myonoffswitch">
+                                                        <div class="onoffswitch-inner"></div>
+                                                        <div class="onoffswitch-switch"></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Radius settings -->
+                                            <div class="col-sm-3">
+                                                <label for="select-radius">Radius</label>
+
+                                                <select id="select-radius" class="form-control">
+                                                    <option value="10">10 km</option>
+                                                    <option value="30">30 km</option>
+                                                    <option value="50">50 km</option>
+                                                    <option value="100">100 km</option>
+                                                    <option value="250">250 km</option>
+                                                    <option value="500">500 km</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Settings successful text -->
+                                            <div class="col-sm-6">
+                                                <div id="success-text-real-time" class="alert alert-success fade in out" style="display: none">
+                                                    Settings has been updated!
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <br>
+                                            <br>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <label for="city">City</label>
+
+                                                <div class="input-group">
+                                                    <input class="form-control" id="city" name="city" type="text" />
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-color" type="button">Find</button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <label for="longitude">Longitude</label>
+
+                                                <input class="form-control" id="lng" name="lng" type="text" />
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <label for="latitude">Latitude</label>
+
+                                                <input class="form-control" id="lat" name="lat" type="text" />
+                                            </div>
+
+                                            <br>
+                                            <br>
+                                        </div>
+
+                                        <div id="map-canvas-location"></div>
+                                    </form>
+
+
+                                    <br>
+                                    <h4>Summary of your settings</h4>
+                                    <p class="text-justify">
+                                        You will receive an email, when someone will notify others inside your radius.
+                                    </p>
+
                                 {% else %}
                                     <p class="text-justify">
-                                        About real-time alarms. How system works? How many alarms will you receive for specific threshold?
+                                        Real-time alarms rely on the user community. Whenever someone is seeing an Aurora,
+                                        any user can send a notification to every nearby users who activated this option.
+                                        This feature is based on the different user's current location.
                                     </p>
+
+                                    <img src="{{ STATIC_URL }}img/about/real-time-alarm_map.png" />
+
+                                    <br><br>
 
                                     <a class="btn-small btn-color btn-pad pull-right" data-toggle="modal" data-target="#login-modal"" href="#">Set real-time alarms</a>
                                 {% endif %}
@@ -185,6 +277,9 @@
         <script>
             var user_id = "{{ user.id }}";
         </script>
+
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+        <script src="{{ STATIC_URL }}js/jquery.geocomplete.min.js"></script>
 
         <!-- Include alarms.js. This script includes AJAX form for daily alarms settings. -->
         <script src="{{ STATIC_URL }}js/frontend/alarms.js"></script>
