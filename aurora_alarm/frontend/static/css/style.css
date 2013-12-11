@@ -2531,7 +2531,8 @@ footer a,.contact-box:hover,#options li a.selected,header .top-bar,header .top-b
 }
 
 /* ------------------------ ALARMS SITE ---------------------------------- */
-#success-text {
+#success-text,
+#success-text-real-time {
     position: relative;
     top: 28px;
     padding-top: 5px;
