@@ -8,11 +8,9 @@ $( document ).ready(function() {
             $('#select-threshold').val(data.results[0].threshold);
 
             if (data.results[0].receive_daily_alarms == true) {
-                $('#myonoffswitch').prop("checked", "true");
-                $('#summary-text').prop('textContent', 'lmkjm');
+                $('#myonoffswitch-real').prop("checked", "true");
             } else {
-                $('#myonoffswitch').removeProp("checked");
-                $('#summary-text').prop('textContent', 'test');
+                $('#myonoffswitch-real').removeProp("checked");
             }
 
             $('#select-radius').val(data.results[0].radius);
@@ -42,10 +40,16 @@ $( document ).ready(function() {
     "When values are changed (daily alarms), save them with AJAX request."
     $('#daily-alarms-settings-form').change(function() {
 
-        if ($('#myonoffswitch').is(":checked")) {
-            var notifications = true;
+        if ($('#myonoffswitch-daily').is(":checked")) {
+            var notifications_daily = true;
         } else {
-            var notifications = false;
+            var notifications_daily = false;
+        }
+
+        if ($('#myonoffswitch-real').is(":checked")) {
+            var notifications_real = true;
+        } else {
+            var notifications_real = false;
         }
 
         $.ajax({
@@ -54,7 +58,8 @@ $( document ).ready(function() {
             data: {
                 'user': parseInt(user_id),
                 'threshold': $('#select-threshold option:selected').text(),
-                'receive_daily_alarms': notifications
+                'receive_real_time_alarms': notifications_real,
+                'receive_daily_alarms': notifications_daily
             },
             success: function(data) {
                 $('#success-text').show(100);
@@ -64,25 +69,39 @@ $( document ).ready(function() {
     });
 
     "When values are changed (real-time alarms), save them with AJAX request."
-    $('#real-time-alarms-settings-form, #city').change(function() {
+    $('#real-time-alarms-settings-form').change(function() {
 
-        $.ajax({
-            type: "PUT",
-            url: API_URL + "user_profiles/" + user_id + "/",
-            delay: 500,
-            data: {
-                'user': parseInt(user_id),
-                'longitude': $('#lng').val(),
-                'latitude': $('#lat').val(),
-                'radius': $('#select-radius').val()
-            },
-            success: function(data) {
-                $('#success-text-real-time').show(100);
-                $('#success-text-real-time').delay(1500).fadeOut(1000);
-            }
-        });
+        if ($('#myonoffswitch-daily').is(":checked")) {
+            var notifications_daily = true;
+        } else {
+            var notifications_daily = false;
+        }
 
-        console.log($('#lng').val());
+        if ($('#myonoffswitch-real').is(":checked")) {
+            var notifications_real = true;
+        } else {
+            var notifications_real = false;
+        }
+
+        setTimeout(function() {
+            $.ajax({
+                type: "PUT",
+                url: API_URL + "user_profiles/" + user_id + "/",
+                data: {
+                    'user': parseInt(user_id),
+                    'longitude': $('#lng').val(),
+                    'latitude': $('#lat').val(),
+                    'radius': $('#select-radius').val(),
+                    'receive_real_time_alarms': notifications_real,
+                    'receive_daily_alarms': notifications_daily
+                },
+                success: function(data) {
+                    $('#success-text-real-time').show(100);
+                    $('#success-text-real-time').delay(1500).fadeOut(1000);
+                }
+            });
+        }, 500);
+
     });
 });
 
