@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-
+    updateSummary();
     "Get user specific values through API and prepare form values."
     $.ajax({
         type: "GET",
@@ -9,8 +9,10 @@ $( document ).ready(function() {
 
             if (data.results[0].receive_daily_alarms == true) {
                 $('#myonoffswitch').prop("checked", "true");
+                $('#summary-text').prop('textContent', 'lmkjm');
             } else {
                 $('#myonoffswitch').removeProp("checked");
+                $('#summary-text').prop('textContent', 'test');
             }
 
             $('#select-radius').val(data.results[0].radius);
@@ -83,3 +85,15 @@ $( document ).ready(function() {
         console.log($('#lng').val());
     });
 });
+
+function updateSummary() {
+
+    if ($('myonoffswitch').checked == true) {
+        console.log('true');
+	var text = "text to write";                
+        $('#summary-text').prop('textContent', text);
+    } else {
+	console.log('false');
+        $('#summary-text').prop('textContent', 'Switch daily alarms on to get notifications.');
+    }
+}
