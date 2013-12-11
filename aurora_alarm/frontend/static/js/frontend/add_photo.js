@@ -10,8 +10,8 @@ $( document ).ready(function() {
         detailsAttribute: "class",
         location: "Lulea"
     }).bind("geocode:result", function(event, result){
-            $("#id_latitude").val(result.geometry.location.nb).change();
-            $("#id_longitude").val(result.geometry.location.ob).change();
+        $("#id_latitude").val(result.geometry.location.nb).change();
+        $("#id_longitude").val(result.geometry.location.ob).change();
     });;
 
     "Bind marker and longitude/latitude fields."

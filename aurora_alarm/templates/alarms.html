@@ -79,8 +79,7 @@
 
                                     <h4>Summary of your settings</h4>
                                     <!-- Read these values from database. Update them, when user makes changes. -->
-                                    <div id="summary-daily" class="text-justify">
-                                    </div>
+                                    <div id="summary-daily" class="text-justify"></div>
 
                                 {% else %}
                                     <p class="text-justify">
@@ -206,7 +205,7 @@
 
                                         <div class="form-group">
                                             <div class="col-sm-12">
-                                                <label for="city">City</label>
+                                                <label for="city">Your location</label>
 
                                                 <div class="input-group">
                                                     <input class="form-control" id="city" name="city" type="text" />
@@ -237,11 +236,10 @@
                                         <div id="map-canvas-location"></div>
                                     </form>
 
-
                                     <br>
                                     <h4>Summary of your settings</h4>
-                                    <div id="summary-real" class="text-justify">
-                                    </div>
+                                    <div id="summary-real" class="text-justify"></div>
+                                    <br>
 
                                 {% else %}
                                     <p class="text-justify">
@@ -250,9 +248,17 @@
                                         This feature is based on the different user's current location.
                                     </p>
 
-                                    <img src="{{ STATIC_URL }}img/about/real-time-alarm_map.png" />
 
-                                    <br><br>
+                                    <div class="portfolio-item">
+                                        <a href="{{ STATIC_URL }}img/about/real-time-alarm_map.png" class="portfolio-item-link" data-rel="prettyPhoto">
+                                            <span class="portfolio-item-hover" style="opacity: 0;"></span>
+                                            <span class="fullscreen" style="top: 65%; opacity: 0;"><i class="icon-search"></i></span>
+                                            <img src="{{ STATIC_URL }}img/about/real-time-alarm_map.png">
+                                        </a>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <br>
 
                                     <a class="btn-small btn-color btn-pad pull-right" data-toggle="modal" data-target="#login-modal"" href="#">Set real-time alarms</a>
                                 {% endif %}

@@ -13,8 +13,8 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h3 class="title">About AuroraAlarm Project</h3>
-						<p>AuroraAlarm is a Computer Science student project. This website's purpose it to offer free real-time alarms and photo sharing for Auroras. We tried to focus on ergonomics, usability and simplicity.</p>
-                        <p>We are two Erasmus student spending six months in Lule&aring;. We decided to create this website because we were really excited about Auroras and we couldn't find any good way to be notified for Auroras.</p>
+                        <p class="text-justify">AuroraAlarm is a Computer Science student project. This website's purpose it to offer free real-time alarms and photo sharing for Auroras. We tried to focus on ergonomics, usability and simplicity.</p>
+                        <p class="text-justify">We are two Erasmus student spending six months in Lule&aring;. We decided to create this website because we were really excited about Auroras and we couldn't find any good way to be notified for Auroras.</p>
                         <br>
                     </div>
                 </div>
@@ -23,72 +23,99 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h3 class="title">How AuroraAlarm Works</h3>
-                        <p>After logging in using Facebook or Google, the user can upload pictures of Auroras and suscribe to alarms, in order to be notified when he's likely to see an Aurora. We distinguish two types of Alarms : Daily alarms and real-time alarms.</p>
-                        <p>Daily alarms are based on the forecast from the <a href="http://www.gi.alaska.edu/AuroraForecast/">Geophysical Institute of University of Alaska Fairbanks</a>. Our website get the daily forecast everyday. Users can set a treshold and receive an email everytime the forecast reaches that treshold.</p>
-                        <p>Real-time alarms rely on the user community. Whenever he's seeing an Aurora, any user can send a notification to every nearby users who activated this option. This feature is based on the different users' current location.
-                        </p>
-                        <br>
+                        <p class="text-justify">After logging in using Facebook or Google, the user can upload pictures of Auroras and suscribe to alarms, in order to be notified when he's likely to see an Aurora. We distinguish two types of Alarms : Daily alarms and real-time alarms.</p>
+
                         <div class="row">
-                            <div class="col-lg-2"></div>
                             <div class="col-lg-8">
-                                <img src="{{ STATIC_URL }}/img/about/real-time-alarm_map.png" width=""/>
+                                <div class="portfolio-item">
+                                    <a href="{{ STATIC_URL }}img/about/real-time-alarm_map.png" class="portfolio-item-link" data-rel="prettyPhoto">
+                                        <span class="portfolio-item-hover" style="opacity: 0;"></span>
+                                        <span class="fullscreen" style="top: 65%; opacity: 0;"><i class="icon-search"></i></span>
+                                        <img src="{{ STATIC_URL }}img/about/real-time-alarm_map.png">
+                                    </a>
+                                    <div class="clearfix"></div>
+                                </div>
                             </div>
-                            <div class="col-lg-2"></div>
+                            <div class="log-lg-4">
+                                 <p class="text-justify">Daily alarms are based on the forecast from the <a href="http://www.gi.alaska.edu/AuroraForecast/">Geophysical Institute of University of Alaska Fairbanks</a>.
+                                     Our website get the daily forecast everyday. Users can set a treshold and receive an email everytime the forecast reaches that treshold.</p>
+                                 <p class="text-justify">Real-time alarms rely on the user community. Whenever he's seeing an Aurora, any user can send a notification to every nearby users who activated this option.
+                                    This feature is based on the different users' current location.</p>
+                                 <p class="text-justify">At any time, the user can update his current location and modify his notification settings.</p>
+                            </div>
                         </div>
-                        <br>
-                        <p>At any time, the user can update his current location and modify his notification settings.</p>
                         <br>
                     </div>
                 </div>
 
-                <!-- Technology Stack and Architecture -->
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h3 class="title">Technology Stack and Architecture</h3>
-                        <p>Our architecture relies on a Django server, based on the MVC software pattern. The model is served by a PostgreSQL database. We use Gunicorn as WSGI HTTP Server. Our application is deployed on Heroku, a PaaS adapted to our project.</p>
-                        <p>We use Celery for asynchronous tasks. With Celery, we can schedule regular tasks like parsing the daily forecast. It is also needed for demanding unexpected tasks, for example to send real-time alarms.</p>
-                        <p>The client will access our app with his web browser. He can access our application via HTML requests. Note that interactions with the model will occur through the REST API.
-                        </p>
-                        <div class="row">
-                            <div class="col-lg-2"></div>
-                            <div class="col-lg-8">
-                                <img src="{{ STATIC_URL }}/img/about/aurora_alarm_diagram.png" width=""/>
-                            </div>
-                            <div class="col-lg-2"></div>
-                        </div>
-                        <br>
-                        <p> We used the following technologies : 
-                            <dl>
-                                <dt> Django </dt>
-                                    <dd>- Photologue for the gallery </dd>
-                                    <dd>- DjangoREST Framework for the REST API </dd>
-                                    <dd>- Celery for asynchronous tasks </dd>
-                                <dt> Twitter Bootstrap for UI/UX </dt>
-                                <dt> Facebook/Google API for authentification</dt>
-                                <dt> Google Maps API </dt>
-                            </dl>
-                        </p>
+                    <!-- Technology Stack -->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <h3 class="title">Technolog Stack</h3>
+                        <p>We used the following technologies:</p>
+
+                        <dl>
+                            <dt><h4>Django</h4></dt>
+                                <dd>- Photologue for the gallery </dd>
+                                <dd>- DjangoREST Framework for the REST API </dd>
+                                <dd>- Celery for asynchronous tasks </dd>
+                            <br>
+                            <dt><h4>Twitter Bootstrap for UI/UX</h4></dt>
+                            <br>
+                            <dt><h4>Facebook/Google API for authentification</h4></dt>
+                                <dd>- Python Social Auth</dd>
+                            <br>
+                            <dt><h4>Google Maps API</h4></dt>
+                            <br>
+                            <dt><h4>Sphinx-docs</h4></dt>
+                                <dd>-readthedocs.org</dd>
+                        </dl>
                         <br>
                     </div>
-                </div>
 
+                    <!--Architecture -->
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <h3 class="title">Architecture</h3>
+                        <p class="text-justify">Our architecture relies on a Django server, based on the MVC software pattern.
+                            The model is served by a PostgreSQL database. We use Gunicorn as WSGI HTTP Server. Our application is deployed
+                            on Heroku, a PaaS adapted to our project.</p>
+
+
+                        <div class="portfolio-item">
+                            <a href="{{ STATIC_URL }}/img/about/aurora_alarm_diagram.png" class="portfolio-item-link" data-rel="prettyPhoto">
+                                <span class="portfolio-item-hover" style="opacity: 0;"></span>
+                                <span class="fullscreen" style="top: 65%; opacity: 0;"><i class="icon-search"></i></span>
+                                <img src="{{ STATIC_URL }}/img/about/aurora_alarm_diagram.png">
+                            </a>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <br>
+
+                        <p class="text-justify">We use Celery for asynchronous tasks. With Celery, we can schedule regular tasks like parsing
+                            the daily forecast. It is also needed for demanding unexpected tasks, for example to send real-time alarms.</p>
+                        <p class="text-justify">The client will access our app with his web browser. He can access our application via HTML requests.
+                            Note that interactions with the model will occur through the REST API.
+                        </p>
+                    </div>
+                </div>
 
                 <!-- Our Team-->
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h3 class="title">Our Team</h3>
                         <div class="row team">
+                            <div class="col-lg-2"></div>
                             <!-- item 1 -->
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 item animate_afc d1">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 item d1">
                                 <div class="team-member">
                                     <div class="team-member-holder">
                                         <div class="team-member-image">
-                                            <img alt="" src="{{ STATIC_URL }}img/team/team-member.jpg">
+                                            <img alt="" src="{{ STATIC_URL }}img/about/nejc.jpg">
                                             <div class="team-member-links">
                                                 <div class="team-member-links-list">
-                                                    <a target="_blank" class="facebook team-member-links-item" href="#"><i class="icon-facebook"></i></a>
-                                                    <a target="_blank" class="twitter team-member-links-item" href="#"><i class="icon-twitter"></i></a>
-                                                    <a target="_blank" class="linkedin team-member-links-item" href="#"><i class="icon-linkedin"></i></a>
+                                                    <a target="_blank" class="facebook team-member-links-item" href="https://www.facebook.com/nejczupec"><i class="icon-facebook"></i></a>
+                                                    <a target="_blank" class="linkedin team-member-links-item" href="http://www.linkedin.com/in/nejczupec"><i class="icon-linkedin"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -96,7 +123,7 @@
                                             <h4 class="team-member-name">Nejc Zupec</h4>
                                             <div class="team-member-role">Software developer</div>
                                             <div class="team-member-description">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum gravida tortor.</p>
+                                                <p>Erasmus exchange student from <a target="_blank" href="http://www.uni-lj.si/eng/">University of Ljubljana</a>, Slovenia</p>
                                             </div>
                                         </div>
                                     </div>
@@ -104,8 +131,10 @@
                             </div>
                             <!-- End -->
 
+                            <div class="col-lg-1"></div>
+
                             <!-- item 2 -->
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 item animate_afc d1">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 item d1">
                                 <div class="team-member">
                                     <div class="team-member-holder">
                                         <div class="team-member-image">
@@ -129,6 +158,8 @@
                                 </div>
                             </div>
                             <!-- End -->
+
+                            <div class="col-lg-2"></div>
                         </div>
                     </div>
                 </div>
