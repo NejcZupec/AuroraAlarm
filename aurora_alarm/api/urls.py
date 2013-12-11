@@ -9,6 +9,7 @@ router = DefaultRouter()
 router.register(r'aurora_daily_forecast', views.AuroraDailyForecastSet)
 router.register(r'users', views.UserViewSet)
 router.register(r'user_profiles', views.UserProfileViewSet)
+router.register(r'photo_with_location', views.PhotoWithLocationViewSet)
 
 
 urlpatterns = patterns('',

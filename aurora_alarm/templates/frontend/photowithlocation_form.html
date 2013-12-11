@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load form_filters %}
+
+{% block title %}Add Photo{% endblock %}
+
+{% block breadcrumb_title %}Add Photo{% endblock %}
+
+{% block content %}
+    <div id="main">
+        <div class="container">
+            <br>
+
+            <form id="add-photo-form" action="" method="post" accept-charset="utf-8" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row">
+                    <div class="col-lg-4">
+
+                        {{ form.non_field_errors }}
+
+                        <div class="form-group">
+                            <label for="image">Image</label>
+                            {{ form.image|addcss:"form-control" }}
+                            {{ form.image.errors }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">Photo location</label>
+                            <input id="city" type="text" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="longitude">Longitude</label><br>
+                            {{ form.longitude|addcss:"form-control lng" }}
+                            {{ form.longitude.errors }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="latitude">Latitude</label><br>
+                            {{ form.latitude|addcss:"form-control lat" }}
+                            {{ form.latitude.errors }}
+                        </div>
+
+                        <br>
+
+                        <input class="btn btn-color" type="submit" name="submit" value="Upload photo">
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div id="map-canvas-location" class="gallery-add-photo"></div>
+                    </div>
+                </div>
+            </form>
+
+            <br>
+            <br>
+        </div>
+    </div>
+{% endblock %}
+
+{% block add_script %}
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script src="{{ STATIC_URL }}js/jquery.geocomplete.min.js"></script>
+    <script src="{{ STATIC_URL }}js/frontend/add_photo.js"></script>
+{% endblock %}

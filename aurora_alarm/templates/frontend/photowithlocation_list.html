@@ -1,0 +1,65 @@
+{% extends "photologue/root.html" %}
+{% load url from future %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block breadcrumb_title %}Gallery{% endblock %}
+
+{% block content %}
+<div id="main">
+    <!-- Main Content start-->
+    <div class="content">
+        <div class="container">
+
+            {% if user.is_authenticated %}
+                <a class="btn btn-color" href="{% url 'gallery-add-photo' %}">
+                    <i class="icon-plus"></i>
+                    Upload photo
+                </a>
+                <br>
+                <br>
+            {% endif %}
+
+            {% if object_list %}
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="portfolio four-column">
+                            {% for photo in object_list %}
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 web jquery item">
+                                <div class="portfolio-item">
+                                    <a href="{{ photo.get_display_url }}" class="portfolio-item-link" data-rel="prettyPhoto" >
+                                        <span class="portfolio-item-hover"></span>
+                                        <span class="fullscreen"><i class="icon-search"></i></span>
+                                        <img src="{{ photo.get_thumbnail_url }}" />
+                                    </a>
+                                    <!--<div class="portfolio-item-title">
+                                        <a href="single-project.html">{{ photo.title }}</a>
+                                        <p>User</p>
+                                    </div>-->
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="alert">
+                    <p>Gallery doesn't exist.</p>
+                </div>
+
+            {% endif %}
+        </div>
+
+        {% if is_paginated %}
+            <!-- TODO: Fix pagination!
+            <p>{{ hits }} photos total.</p>
+            <div id="page_controls">
+                <p>{% if has_previous %}<a href="{% url 'pl-photo-list' previous %}">Previous</a> | {% endif %} page {{ page }} of {{ pages }} {% if has_next %}| <a href="{% url 'pl-photo-list' next %}">Next</a>{% endif %}</p>
+            </div>-->
+        {% endif %}
+
+        <br>
+    </div>
+</div>
+{% endblock %}

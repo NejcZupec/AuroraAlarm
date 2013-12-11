@@ -2,6 +2,8 @@ from django.contrib.auth import logout
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.views import generic
+from django.views.generic.list import ListView
+from models import PhotoWithLocation
 
 
 class HomeView(generic.TemplateView):
@@ -26,6 +28,14 @@ class MapView(generic.TemplateView):
 
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
+
+
+class PhotoWithLocationView(object):
+    queryset = PhotoWithLocation.objects.order_by("-id")
+
+
+class PhotoWithLocationListView(PhotoWithLocationView, ListView):
+    paginate_by = 8
 
 
 def logout_view(request):
