@@ -7,3 +7,4 @@ django-filter==0.7
 django-tagging==0.3.1
 django-photologue== 2.7
 python-social-auth==0.1.17
+Sphinx==1.1.3
