@@ -2,4 +2,4 @@
 Design and Architecture
 =======================
 
-This is design and architecture site!
+.. image:: img/aurora_alarm_diagram.png
