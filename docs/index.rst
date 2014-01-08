@@ -12,14 +12,13 @@ This project was developed as a part of Design of Dynamic Web Systems course, ta
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    introduction
    technology_stack
    design_and_architecture
    api_documentation
    security
-   references
    installation
    discussion_and_evaluation
    future_work

@@ -1,5 +1,0 @@
-
-References
-==========
-
-This is references!

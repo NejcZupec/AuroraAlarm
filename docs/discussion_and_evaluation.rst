@@ -6,7 +6,7 @@ In this chapter we would like to present and describe what have we done in this 
 for this project, provided by professor: https://sites.google.com/a/ltu.se/m7011e-2013/assignment
 
 Components
-^^^^^^^^^^
+----------
 **Backend (server-part) that stores data persistently and efficiently.**
   Backend is made with Django which uses ORM. It is persistent and efficient. At the moment we use SQL-type database, because we believe that meets the requirements of traffic for this kind of projects.
 **A clearly defined and documented API for communication with the backend.**
@@ -25,14 +25,12 @@ Components
   Frontend is completely written with HTML5 code. We have used Twitter Bootstrap framework, which is natively written with HTML5 and CSS3 technologies.
 
 Deployment
-^^^^^^^^^^
-
+----------
 **The system should be deployed in the cloud and be publically available.**
   AuroraAlarm is deployed at Heroku. The application is accessible at: http://aurora-alarm.herokuapp.com/. All instructions, how to deploy the code, you can find it in installation chapter.
 
 Bonus Parts
-^^^^^^^^^^^
-
+-----------
 **User administration - add, remove, edit users.**
   User management can be done through RESTful API or Django's control panel.
 **Data administration - interfacing databases, editing data via separate graphical interface.**
