@@ -2,6 +2,8 @@
 Introduction
 ============
 
+TODO: extend this chapter
+
 Problem
 -------
 We are exchange students here in Luleå and we have already realized that here you can see an extraordinary natural phenomenon,
@@ -31,5 +33,3 @@ We have provided a few use cases, what a user can do with AuroraAlarm applicatio
 4. A user can upload an image of aurora and set location, where the image was taken.
 5. A user can search over the map, where are collected different aurora images. Here a user can see, where you can see the nicest aurora.
 6. A user can sign up with Facebook or Google+ account.
-
-

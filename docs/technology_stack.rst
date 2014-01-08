@@ -3,7 +3,8 @@ Technology Stack
 ================
 
 AuroraAlarm is built with quite new and popular, open source technologies. In this project we wanted to learn and try, how to use
-all these technologies and how they interact between each other.
+all these technologies and how they interact between each other. Further we would like to list all technologies we have used
+and write a short description for each, why we have chosen it.
 
 Backend
 -------
@@ -11,13 +12,13 @@ Backend
 + Photologue gallery
 + Django REST Framework
 + Celery
++ highcharts API
 
 Graphical User Interface
 ------------------------
 + Twitter Bootstrap for UI/UX
 + theme from wrapbootstrap PIXMA theme
 + jQuery
-+ highcharts API
 + HTML5/CSS3
 
 Authentication
@@ -29,7 +30,6 @@ Map
 ----
 + Google Maps API
 + Google location search
-
 
 Database
 --------
@@ -47,4 +47,4 @@ Documentation
 
 Deployment
 ----------
-+Heroku
++ Heroku

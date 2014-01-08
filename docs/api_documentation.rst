@@ -2,4 +2,4 @@
 API Documentation
 =================
 
-This is API documentation!
+TODO: add API documentation. Add documentation also to REST framework application and connect everything.

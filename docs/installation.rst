@@ -152,4 +152,3 @@ delete the whole database and set it up one more time::
 
 Now you just have to follow up instructions in the section above, how to setup a database. That's it, you have successfully
 updated the code.
-

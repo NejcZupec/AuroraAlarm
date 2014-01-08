@@ -44,3 +44,8 @@ Bonus Parts
 **Use your imagination - do that little extra...**
   We bought Twitter Bootstrap theme which helped us to make a nicer graphical interface. We were exploring with different new technologies (asynchronous processing with Celery, jQuery addons for location filtering, AJAX requests, photologue gallery,...)
 
+What works and what doesn't
+---------------------------
+TODO
+
+TODO: Add a conclusion and connect this topic with future work.
