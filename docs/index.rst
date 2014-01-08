@@ -15,11 +15,12 @@ Contents:
    :maxdepth: 2
 
    introduction
+   technology_stack
    design_and_architecture
    api_documentation
-   technology_stack
    security
    references
    installation
+   discussion_and_evaluation
    future_work
 

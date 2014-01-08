@@ -65,15 +65,15 @@ Create a new directory, e.g. name it aurora-alarm::
 
     mkdir aurora-alarm && cd aurora-alarm
 
-Create Procfile for a your new app and enter command starting gunicorn server. Check if the name of application is correct::
+Create Procfile for your new app and enter command starting gunicorn server. Check if the name of the application is correct::
 
     echo web: gunicorn aurora-alarm.wsgi > Procfile
 
 Clone the latest code from Github somewhere to your disk::
 
-    cd ..;git clone git@github.com:Gupi/AuroraAlarm.git
+    cd ..; git clone git@github.com:Gupi/AuroraAlarm.git
 
-Copy all file from the folder aurora-alarm (from cloned repository) to your created repository for Heroku. All files should be
+Copy all files from the folder aurora-alarm (from cloned repository) to your created repository for Heroku. All files should be
 in root of your repository::
 
     cp AuroraAlarm/aurora-alarm aurora-alarm
@@ -119,10 +119,37 @@ everything works::
     heroku open
 
 This command will open your browser and you should be able to see running application. If you have any problems, you can
-open heroku logs and than you will be able to find a problem::
+open heroku logs. You will see debug messages::
 
     heroku logs
 
-Update existing Heroku app
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Update an existing Heroku app
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Let's assume you have already created Heroku app and you wanted to update the latest code from the Github repository.
+Our application at Heroku is named as aurora-alarm. All further instructions/commands will use that name.
+
+First, clone the repository at Heroku::
+
+    git clone git@heroku.com:aurora-alarm.git
+
+Clone the repository at Github::
+
+    git clone git@github.com:Gupi/AuroraAlarm.git
+
+After these two steps, you will have two directories: aurora-alarm (clone from Heroku) and AuroraAlarm (clone from Github).
+Now you have to copy the latest code from AuroraAlarm/aurora-alrarm to aurora-alarm. Please, check instructions in section
+above, where you will find instructions, how to prepare directory structure. When you have finished with directory structure,
+you have to commit everything and upload to the Heroku repository::
+
+    git add *
+    git commit -m "Code update to the latest."
+    git push heroku master
+
+Ok, code is now updated. Now we have to update the database. If code for database is changed, than I recommend that you
+delete the whole database and set it up one more time::
+
+    heroku pg:reset postgres
+
+Now you just have to follow up instructions in the section above, how to setup a database. That's it, you have successfully
+updated the code.
 
