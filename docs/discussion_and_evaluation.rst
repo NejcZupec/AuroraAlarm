@@ -39,9 +39,6 @@ Bonus Parts
 
 .. Image:: img/django_control_panel.png
 
-
-**Statistics over usage (tip: Google Analytics)**
-  TODO
 **Connections to social media, e.g. FaceBook and Google+.**
   Users can authenticate with Facebook or Google+ accounts.
 **Integrate "cool" other APIs**
@@ -51,17 +48,5 @@ Bonus Parts
 
 What works and what doesn't
 ---------------------------
-Our development roadmap is divided into three parts:
-
-First stage:
-
-
-Second stage:
-
-
-Third stage (future work):
-
-
-At the moment we have finished the first stage of the project. User interface is practically finished.
-
-TODO: Add a conclusion and connect this topic with future work.
+We have already successfully developed an user interface and started to develop backend and asynchronous tasks. All main
+functionalities are developed, except sending emails and API security. Future ideas are described
