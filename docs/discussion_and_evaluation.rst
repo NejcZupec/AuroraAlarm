@@ -49,4 +49,4 @@ Bonus Parts
 What works and what doesn't
 ---------------------------
 We have already successfully developed an user interface and started to develop backend and asynchronous tasks. All main
-functionalities are developed, except sending emails and API security. Future ideas are described
+functionalities are developed, except sending emails and API security. Future ideas are described in next chapter.

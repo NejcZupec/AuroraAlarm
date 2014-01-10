@@ -24,9 +24,8 @@ can interact with the website through API. You can find it here::
 
     http://aurora-alarm.herokuapp.com/api/
 
-The web interface is very simple. You can navigate between different object via links or through URLs. Through URLs you
- can also use filtering options (check the official documentation). This interface
-enables you to execute all CRUD (create, read, update, delete) operations. If you make requests through browser, you will
+The web interface is very simple. You can navigate between different object via links or through URLs. Through URLs you can also use filtering options (check the official documentation).
+This interface enables you to execute all CRUD (create, read, update, delete) operations. If you make requests through browser, you will
 get HTTP response, otherwise you will get a classical JSON response. You can also switch between HTTP and JSON through
 the interface, a button for switching is at top-right corner.
 
