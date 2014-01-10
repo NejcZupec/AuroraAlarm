@@ -37,9 +37,10 @@ Authentication
 Map
 ----
 **Google Maps API** (https://developers.google.com/maps/documentation/javascript)
-Google Maps is a web mapping service application and technology provided by Google. It is very simple to use, with powerful API and good documentation.
+  Google Maps is a web mapping service application and technology provided by Google. It is very simple to use, with powerful API and good documentation.
+
 **Geocomplete** (http://ubilabs.github.io/geocomplete/)
-Geocomplete is an advanced jQuery plugin that wraps the Google Maps API's Geocoding and Places Autocomplete services. We decided for it, basically because it works naturally with jQuery and has a good documentation.
+  Geocomplete is an advanced jQuery plugin that wraps the Google Maps API's Geocoding and Places Autocomplete services. We decided for it, basically because it works naturally with jQuery and has a good documentation.
 
 Database
 --------

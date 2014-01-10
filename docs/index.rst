@@ -9,9 +9,13 @@ Welcome to AuroraAlarm's documentation!
 This is a documentation for AuroraAlarm project. This documentation is not organized in a classical way, but as a report.
 This project was developed as a part of Design of Dynamic Web Systems course, taught at the Luleå University of Technology, Sweden.
 
-TODO: disclaimer for blog
+Instead of a blog we have been using Github's issue tracking system. We have commented what it has been done, what we
+are going to do and where we have problems. You can find issues here::
 
-Contents:
+    https://github.com/Gupi/AuroraAlarm/issues
+
+Content
+-------
 
 .. toctree::
    :maxdepth: 1

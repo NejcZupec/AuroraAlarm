@@ -2,8 +2,6 @@
 Introduction
 ============
 
-TODO: extend this chapter
-
 Problem
 -------
 We are exchange students here in Luleå and we have already realized that here you can see an extraordinary natural phenomenon,
@@ -11,7 +9,6 @@ called aurora borealis or northern lights. When we saw it for the first time, we
 here in northern Scandinavia, we have realized that it is very hard to know, when aurora is visible. You can miss it very easy.
 We were searching for different applications which can notify you, when aurora is active, but we were not able to find it.
 That is why we decided to develop a web application which can help every aurora enthusiast to never miss northern lights anymore.
-
 
 Project description
 -------------------
