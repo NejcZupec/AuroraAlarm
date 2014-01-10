@@ -2,8 +2,9 @@
 Discussion and Evaluation
 =========================
 
-In this chapter we would like to present and describe what have we done in this project. For starting point we will use the goals/instructions
-for this project, provided by professor: https://sites.google.com/a/ltu.se/m7011e-2013/assignment
+In this chapter we would like to present and describe what have we done so far in this project. For starting point we will use the goals/instructions
+for this project, provided by professor: https://sites.google.com/a/ltu.se/m7011e-2013/assignment. At the end we will check
+what works and what doesn't.
 
 Components
 ----------
@@ -22,7 +23,7 @@ Components
 **You should understand how the security part works and be able to motivate why your solution is secure.**
   Authentication security is ensured with OAuth2 protocol. We just save minimal data about users (what OAuth2 protocol require). Django framework supports a lot of security mechanisms. We have implemented further mechanisms: cross-site-scripting (XSS) protection, cross site request forgery (CSRF) and SQL injection protection.
 **The system should utilize modern HTML5-technologies of your choice.**
-  Frontend is completely written with HTML5 code. We have used Twitter Bootstrap framework, which is natively written with HTML5 and CSS3 technologies.
+  Frontend is completely written with HTML5 code. We have used Twitter Bootstrap framework, which is natively written with HTML5 and CSS3 technologies. Also highcharts library is written in pure HTML5/JavaScript.
 
 Deployment
 ----------
@@ -35,6 +36,10 @@ Bonus Parts
   User management can be done through RESTful API or Django's control panel.
 **Data administration - interfacing databases, editing data via separate graphical interface.**
   CRUD operations for all objects can be done through Django's control panel. You can find it here: http://aurora-alarm.herokuapp.com/admin/
+
+.. Image:: img/django_control_panel.png
+
+
 **Statistics over usage (tip: Google Analytics)**
   TODO
 **Connections to social media, e.g. FaceBook and Google+.**
@@ -46,6 +51,17 @@ Bonus Parts
 
 What works and what doesn't
 ---------------------------
-TODO
+Our development roadmap is divided into three parts:
+
+First stage:
+
+
+Second stage:
+
+
+Third stage (future work):
+
+
+At the moment we have finished the first stage of the project. User interface is practically finished.
 
 TODO: Add a conclusion and connect this topic with future work.
