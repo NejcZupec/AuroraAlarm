@@ -4,7 +4,8 @@ Technology Stack
 
 AuroraAlarm is built with quite new and popular, open source technologies. In this project we wanted to learn and try, how to use
 all these technologies and how they interact between each other. Further we would like to list all technologies we have used
-and write a short description for each, why we have chosen it.
+and write a short description for each and why we have chosen it. Usually the main reason for technology choice was a good
+documentation. We think this is the main advantage, when you have to select between different technologies.
 
 Backend
 -------
@@ -18,8 +19,6 @@ Backend
   Celery is an asynchronous task queue/job queue based on distributed message passing. It is focused on real-time operation, but supports scheduling as well. All our backend jobs are executed with celery: sending emails, collecting aurora forecast data, alerting system,...
 **Highcharts API** (http://www.highcharts.com/)
   Highcharts is a charting library written in pure HTML5/JavaScript, offering intuitive, interactive charts to your web site or web application. We used this library at aurora history/forecast chart. We have decided for it, because it is for free and at the moment very popular library for drawing different charts.
-**Gunicorn** ()
-  Server running Django-based applications.
 
 Graphical User Interface
 ------------------------
@@ -37,23 +36,35 @@ Authentication
 
 Map
 ----
-**Google Maps API**
-**jQuery GeoComplete**
+**Google Maps API** (https://developers.google.com/maps/documentation/javascript)
+Google Maps is a web mapping service application and technology provided by Google. It is very simple to use, with powerful API and good documentation.
+**Geocomplete** (http://ubilabs.github.io/geocomplete/)
+Geocomplete is an advanced jQuery plugin that wraps the Google Maps API's Geocoding and Places Autocomplete services. We decided for it, basically because it works naturally with jQuery and has a good documentation.
 
 Database
 --------
-**PostgreSQL**
-**sqlite**
+**PostgreSQL** (http://www.postgresql.org/)
+  PostgreSQL is a powerful, open source object-relational database system. We use it in deployed version at Heroku, because this the main choice and it works good. We didn't want to complicate with NoSQL databases, because our data scheme is very simple and SQL works good enough.
+
+**sqlite** (http://www.sqlite.org/)
+  SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. It is very easy to use for development purposed. It has been already installed with Django and it works very good, when you have to develop in a team.
 
 Version control
 ---------------
-**Github**
+**Github** (https://github.com/)
+  GitHub is a web-based hosting service for software development projects that use the Git revision control system. We decided for it mainly because of git. It is really good tool for source control and also team work. We have really good experience with it and we recommended it!
 
 Documentation
 -------------
-**Read the docs**
-**sphynx engine**
+**Read the docs** (https://readthedocs.org/)
+  Read the Docs hosts documentation, making it fully searchable and easy to find. You can import your docs using any major version control system, including Mercurial, Git, Subversion, and Bazaar. Final documentation looks really nice and integration with Github is perfect.
+
+**Sphynx engine** (http://sphinx-doc.org/)
+  Sphinx is a tool that makes it easy to create intelligent and beautiful documentation. In combination with *Read the docs* and *Github* it enables you to create documentation sites, very easy and efficient. It has a bit complicated syntax, but you know how to use it, it's very straightforward.
 
 Deployment
 ----------
-**Heroku**
+**Heroku** (https://www.heroku.com/)
+  Heroku is a cloud platform as a service (PaaS) supporting several programming languages. We have decided for it, because we wanted to try this a very popular platform. We had some troubles, but after a couple of days we have succeeded. Maybe it would be easier to use Amazon, but at least we learned something new and see how Heroku works.
+**Gunicorn** (http://gunicorn.org/)
+  The Gunicorn "Green Unicorn" is a Python Web Server Gateway Interface HTTP Server for Unix.
